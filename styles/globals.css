@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: 'Titillium Web',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #2a2577;
+  color:  #dae1e7;
+
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* @media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+  body {
+    color: white;
+    background: black;
+  }
+} */
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: 'transparent'; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #743898;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #dae1e7; 
+}
+
+h1{
+  font-size:2rem;
+  font-weight: 900;
+  margin:0;
+  padding:0;
+}
+h2{
+  margin:0;
+  padding:0;
+}
+h3{
+  margin:0;
+  padding:0;
+}
+h4{
+  margin:0;
+  padding:0;
+}
+h5{
+  margin:0;
+  padding:0;
+}
+h6{
+  margin:0;
+  padding:0;
+}
+ul{
+  margin:0;
+  padding:0;
+  list-style-type: none;
+}
+p{
+  font-size:1rem;
+  text-align: justify;
+  margin:0;
+  padding:0;
+}
+
+.fa-dev:hover {
+  color: #743898 !important;
+}
+
+.fa-github-alt:hover{
+  color: #743898 !important;
+}
+
+.fa-brands {
+  padding-right: 8px;
+}

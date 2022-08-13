@@ -1,0 +1,142 @@
+.main{
+    margin:0 15rem;
+    padding: 1.5rem;
+    /* background-color: blue; */
+}
+.main h1{
+    color:#dae1e7;
+    padding:0;
+    margin-bottom:1rem;
+}
+.main h2{
+    color:#dae1e7;
+    text-align: left;
+    margin-bottom: 1rem;
+}
+.main h3{
+    color:#dae1e7;
+    font-size:12px;
+    /* margin-bottom: 1rem; */
+}
+.main p{
+    color:#c1cee6;
+    font-size: 13px;
+    margin-bottom:0.5rem;
+}
+.title{
+    padding:3.2px;
+}
+.grid{
+    display:grid;
+    grid-template-columns:1fr 4fr;
+    grid-gap:0rem;
+    grid-auto-rows:auto;
+    /* minmax(100px,auto); */
+}
+
+.grid > div{
+    color:black;
+    /* background:#eee; */
+    padding:0rem;
+}
+
+.grid > div:nth-child(odd){
+    /* background:#ddd */
+}
+
+.gridContentRow{
+    display:grid;
+    grid-template-columns:1fr;
+    grid-auto-rows:auto;
+    grid-gap:1rem;
+}
+
+.gridContentRow > div{
+    /* background-color: aliceblue; */
+    /* color:black; */
+    padding-left:1rem;
+    font-size:12px;
+    /* border-right: 1px solid #743898; */
+}
+
+.gridContentRow ul{
+    margin:0;
+    padding-left:0;
+    list-style-type: none;
+}
+
+.gridContentRow  li{
+    margin-bottom:0.75rem;
+    padding-bottom:8px;
+    list-style-type: none;
+
+}
+
+
+
+.gridContentColumn{
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr;
+    grid-auto-rows:auto;
+    grid-gap:1rem;
+}
+
+.gridContentColumn > div{
+    background-color: #1d1952;
+    box-shadow: 5px 10px #403c7a;
+    margin-bottom:10px;
+    padding:1rem;
+    font-size:12px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.gridContentColumn ul{
+    margin:0;
+    padding-left:0;
+    list-style-type: none;
+}
+
+.gridContentColumn  li{
+    background-color: #5a6353;
+    color:#dae1e7;
+    display:inline-block;
+    padding: 0rem 0.2rem;
+    margin:0.2rem 0.2rem 0.2rem 0rem;
+    border:none;
+    border-radius: 0.2rem;
+    text-transform: uppercase;
+    font-family: 'Titillium Web';
+    font-weight:700;
+    font-size:9px;
+}
+
+.main button{
+    margin-top:0.5rem;
+    padding:0.3rem;
+    border:none;
+    border-radius: 0.2rem;
+    background-color: #743898;
+    color:#dae1e7;
+    text-transform: uppercase;
+    font-family: 'Titillium Web';
+    font-weight:700;
+    font-size:10px;
+}
+
+.main button:hover{
+    margin-top:0.5rem;
+    padding:0.3rem;
+    border:none;
+    border-radius: 0.2rem;
+    background-color: #dae1e7;
+    color:#743898;
+    text-transform: uppercase;
+    font-family: 'Titillium Web';
+    font-weight:700;
+    font-size: 10px;
+}
+
+
+
