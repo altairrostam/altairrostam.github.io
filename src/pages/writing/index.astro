@@ -11,22 +11,23 @@ const tags = Array.from(new Set(articles.flatMap((article) => article.data.tags)
 ---
 
 <BaseLayout title="Writing" description="Long-form technical writing on AI systems, retrieval, automation, and engineering tradeoffs.">
-  <section class="content-shell py-14 sm:py-20">
-    <p class="metadata">Research journal</p>
-    <h1 class="mt-4 font-heading text-[clamp(3rem,8vw,6rem)] font-extrabold leading-none">Writing</h1>
-    <p class="mt-6 max-w-prose text-lg leading-8 text-secondary">
-      Notes for readers who want architecture, tradeoffs, and what changed after the demo worked.
+  <section class="content-shell pt-14 pb-10">
+    <h1 class="font-heading text-xl font-semibold">Writing</h1>
+    <p class="mt-2 max-w-prose text-secondary">
+      Notes on AI systems — architecture, tradeoffs, and what changed after the demo worked.
     </p>
-    <div class="mt-8 flex flex-wrap gap-2" aria-label="Available tags">
+    <div class="mt-6 flex flex-wrap gap-2" aria-label="Available tags">
       {
         tags.map((tag) => (
-          <a class="rounded-md border border-border bg-surface px-2.5 py-1 font-mono text-xs text-nature no-underline hover:border-ocean" href={`/writing?tag=${tag}`}>
-            {tag}
+          <a class="font-mono text-xs text-secondary no-underline opacity-60 hover:opacity-100" href={`/writing?tag=${tag}`}>
+            #{tag}
           </a>
         ))
       }
     </div>
-    <div class="mt-10">
+  </section>
+  <section class="content-shell pb-14">
+    <div data-stagger>
       {articles.map((article) => <ArticleCard entry={article} />)}
     </div>
   </section>
