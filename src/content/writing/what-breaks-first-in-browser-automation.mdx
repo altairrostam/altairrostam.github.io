@@ -1,0 +1,37 @@
+---
+title: What Breaks First in Browser Automation
+permalink: what-breaks-first-in-browser-automation
+description: Lessons from treating browser automation as an unreliable integration boundary rather than a deterministic script runner.
+publishDate: 2026-02-18
+updatedDate: 2026-02-18
+tags:
+  - automation
+  - browsers
+  - operations
+draft: false
+executiveSummary: Browser automation usually fails first at state, timing, authentication, and UI drift, so reliable systems need observability and recovery paths around those boundaries.
+keyTakeaways:
+  - Browser automation should be modeled as an external dependency.
+  - Selectors are rarely the only fragile part; session state and timing matter just as much.
+  - Good logs and screenshots turn intermittent failures into fixable incidents.
+faq:
+  - question: Is browser automation reliable enough for production?
+    answer: It can be, but only when the system expects UI drift, session problems, timing variance, and partial failures.
+relatedSlugs: []
+---
+
+## Context
+
+Browser automation is tempting because it can operate where APIs are missing or incomplete. The cost is that the browser becomes an integration surface with human-oriented behavior.
+
+## What Changed
+
+Reliability improved once scripts were wrapped in state checks, retries, evidence capture, and clear failure categories.
+
+## System Implications
+
+The automation layer needs monitoring like any other production dependency. It should report what it saw, what it tried, and where the page differed from expectations.
+
+## Practical Takeaway
+
+Treat browser automation like a negotiation with a changing interface, not a static script.

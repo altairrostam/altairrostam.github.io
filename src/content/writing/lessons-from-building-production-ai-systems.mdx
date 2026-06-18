@@ -1,0 +1,38 @@
+---
+title: Lessons from Building Production AI Systems
+permalink: lessons-from-building-production-ai-systems
+description: Durable lessons about prompts, retrieval, evaluation, observability, and product boundaries in production AI work.
+publishDate: 2026-04-20
+updatedDate: 2026-04-20
+tags:
+  - ai-systems
+  - production
+  - evaluation
+draft: false
+executiveSummary: Production AI systems fail or succeed around context, evaluation, interfaces, and operations more often than around raw model capability.
+keyTakeaways:
+  - Prompt quality depends on surrounding system design.
+  - Evaluation should be present before model swaps become routine.
+  - Observability must capture inputs, decisions, outputs, and user-visible failures.
+faq:
+  - question: What matters most after an AI prototype works?
+    answer: The next priorities are evaluation, observability, context quality, and clear boundaries for what the system should not do.
+relatedSlugs:
+  - why-most-ai-systems-fail-before-the-model-does
+---
+
+## Context
+
+The prototype stage rewards speed and surprise. Production rewards repeatability, debuggability, and clear ownership of failure.
+
+## What Changed
+
+Systems became more reliable when model behavior was treated as one component among retrieval, product design, data contracts, and review workflows.
+
+## System Implications
+
+A production AI system needs tests that reflect user tasks, logs that explain decisions, and workflows that handle uncertainty without hiding it.
+
+## Practical Takeaway
+
+The model is rarely the whole product. Build the scaffolding that lets the model be useful under real constraints.

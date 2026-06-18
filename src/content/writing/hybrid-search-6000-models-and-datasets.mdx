@@ -1,0 +1,38 @@
+---
+title: Hybrid Search for 6,000 Models and Datasets
+permalink: hybrid-search-6000-models-and-datasets
+description: How a hybrid retrieval design balances semantic discovery, exact matching, and metadata filtering for large AI catalogs.
+publishDate: 2026-02-01
+updatedDate: 2026-02-01
+tags:
+  - search
+  - retrieval
+  - architecture
+draft: false
+executiveSummary: "Hybrid search works best when each signal has a job: vectors broaden meaning, keywords protect exactness, and metadata keeps the catalog navigable."
+keyTakeaways:
+  - Large technical catalogs need both discovery and precision.
+  - Ranking signals should be inspectable instead of hidden behind one blended score.
+  - Metadata quality often determines whether semantic search feels trustworthy.
+faq:
+  - question: When should a catalog use hybrid search?
+    answer: Use hybrid search when users need both fuzzy discovery and exact lookup across names, IDs, tags, licenses, or other structured fields.
+relatedSlugs:
+  - why-pure-vector-search-wasnt-enough
+---
+
+## Context
+
+A catalog with thousands of models and datasets has more than one search problem. Some users know exactly what they want. Others are exploring a task, modality, or capability.
+
+## What Changed
+
+The system became more useful when retrieval stopped treating all queries the same way. Exact terms, filters, and semantic intent each received a dedicated path through the ranking pipeline.
+
+## System Implications
+
+Hybrid retrieval adds operational complexity, but it also creates knobs for debugging. When search fails, the team can inspect which signal underperformed.
+
+## Practical Takeaway
+
+Do not flatten a technical catalog into embeddings too early. Preserve structure, then let semantic search complement it.

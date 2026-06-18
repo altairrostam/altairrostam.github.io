@@ -1,0 +1,61 @@
+---
+title: Multi-Platform Marketing Engine
+permalink: multi-platform-marketing-engine
+summary: A workflow system for generating, adapting, and scheduling campaign assets across multiple marketing surfaces without losing review control.
+status: production
+role: Systems owner
+dateStarted: 2025-06-10
+dateUpdated: 2026-02-05
+technologies:
+  - TypeScript
+  - Browser automation
+  - Queues
+  - LLMs
+featured: true
+relatedArticles:
+  - what-breaks-first-in-browser-automation
+---
+
+## Overview
+
+The marketing engine coordinated content generation, platform-specific adaptation, review checkpoints, and publishing tasks across several external tools.
+
+## Problem
+
+Marketing workflows often break at the handoff between generated drafts and platform constraints. Each destination has different limits, formats, authentication behavior, and failure modes.
+
+## Architecture
+
+The system separated campaign intent, asset generation, platform transforms, review state, and publishing execution. Browser-driven tasks were treated as unreliable external integrations rather than normal API calls.
+
+## Tradeoffs
+
+Automation speed had to be balanced against human review. The system deliberately kept approval gates in place because publishing errors are more expensive than generation delays.
+
+## Technical Decisions
+
+Platform adapters were isolated so that one tool changing its UI or validation rules did not force a rewrite of the entire campaign pipeline.
+
+## Challenges
+
+Browser sessions, rate limits, and platform-specific validation created most of the operational friction. Durable logging mattered as much as the prompt design.
+
+## Lessons Learned
+
+Workflow automation is most useful when it narrows repetitive work while preserving accountability at the decision points that carry reputational risk.
+
+## Technologies
+
+- TypeScript
+- Browser automation
+- Queue workers
+- LLM-assisted drafting
+- Structured review states
+
+## Diagrams
+
+Diagrams will be added during the visual content pass.
+
+## Related Articles
+
+- [What Breaks First in Browser Automation](/writing/what-breaks-first-in-browser-automation)

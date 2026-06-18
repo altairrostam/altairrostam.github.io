@@ -1,0 +1,37 @@
+---
+title: Designing a 40-Source Intelligence Pipeline
+permalink: designing-a-40-source-intelligence-pipeline
+description: A practical approach to collecting, normalizing, deduplicating, and summarizing signals from many source types.
+publishDate: 2026-03-18
+updatedDate: 2026-03-18
+tags:
+  - pipelines
+  - intelligence
+  - ai-systems
+draft: false
+executiveSummary: Multi-source intelligence systems need source discipline, normalized records, provenance, and deduplication before summarization can be trusted.
+keyTakeaways:
+  - Source quality matters more than source count.
+  - Preserve raw inputs so parsing and synthesis mistakes can be audited.
+  - Deduplication is a core product feature, not an implementation detail.
+faq:
+  - question: What should an intelligence pipeline store first?
+    answer: Store raw source payloads and normalized records separately so the system can preserve evidence while improving parsing over time.
+relatedSlugs: []
+---
+
+## Context
+
+Monitoring many sources creates the illusion of coverage. Without a disciplined pipeline, it mostly creates repeated links, uneven summaries, and brittle source-specific logic.
+
+## What Changed
+
+The useful design separated collection from interpretation. Collectors gathered evidence. Normalizers shaped records. Summaries came later, with provenance attached.
+
+## System Implications
+
+Every stage needs a clear contract. A source failure should not corrupt synthesis, and a synthesis mistake should not erase the original evidence.
+
+## Practical Takeaway
+
+Build the boring provenance layer first. It is the part that makes every later AI feature easier to trust.
