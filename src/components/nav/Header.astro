@@ -1,0 +1,84 @@
+---
+import ThemeToggle from './ThemeToggle.astro';
+
+const navItems = [
+  { href: '/', label: 'Home' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/writing', label: 'Writing' },
+  { href: '/about', label: 'About' },
+  { href: '/now', label: 'Now' },
+  { href: '/resume', label: 'Resume' },
+];
+
+const pathname = Astro.url.pathname;
+---
+
+<header class="border-b border-border/80 bg-bg/95">
+  <div class="content-shell flex min-h-16 items-center justify-between gap-6 py-3">
+    <a class="font-heading text-lg font-semibold text-primary no-underline" href="/">
+      Altair Rostam
+    </a>
+
+    <nav class="hidden items-center gap-1 md:flex" aria-label="Primary navigation">
+      {
+        navItems.map((item) => {
+          const isActive = item.href === '/' ? pathname === '/' : pathname.startsWith(item.href);
+
+          return (
+            <a
+              class:list={[
+                'rounded-md px-3 py-2 font-mono text-[0.8125rem] no-underline transition',
+                isActive ? 'text-ocean' : 'text-secondary hover:text-primary',
+              ]}
+              href={item.href}
+              aria-current={isActive ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          );
+        })
+      }
+    </nav>
+
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+      <button
+        class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary md:hidden"
+        type="button"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        data-mobile-nav-toggle
+      >
+        <span class="h-px w-4 bg-current shadow-[0_6px_0_currentColor,0_-6px_0_currentColor]"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav
+    class="content-shell hidden border-t border-border/70 py-3 md:hidden"
+    aria-label="Mobile navigation"
+    data-mobile-nav
+  >
+    <div class="grid gap-1">
+      {
+        navItems.map((item) => (
+          <a class="rounded-md px-2 py-2 font-mono text-sm text-secondary no-underline hover:text-primary" href={item.href}>
+            {item.label}
+          </a>
+        ))
+      }
+    </div>
+  </nav>
+</header>
+
+<script>
+  const navToggle = document.querySelector('[data-mobile-nav-toggle]');
+  const mobileNav = document.querySelector('[data-mobile-nav]');
+
+  navToggle?.addEventListener('click', () => {
+    const isOpen = navToggle.getAttribute('aria-expanded') === 'true';
+
+    navToggle.setAttribute('aria-expanded', String(!isOpen));
+    mobileNav?.classList.toggle('hidden', isOpen);
+  });
+</script>

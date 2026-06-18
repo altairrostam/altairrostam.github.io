@@ -1,0 +1,26 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Altair Rostam"
+  description="Engineering notes, research writing, and project documentation from Altair Rostam."
+>
+  <section class="content-shell py-20 sm:py-28">
+    <p class="metadata mb-5">Engineering notebook / research journal</p>
+    <h1 class="max-w-4xl font-heading text-[clamp(3rem,9vw,6.5rem)] font-extrabold leading-[0.96]">
+      Building useful AI systems, then writing down what broke.
+    </h1>
+    <p class="mt-8 max-w-prose text-lg leading-8 text-secondary">
+      A static-first home for project architecture, technical tradeoffs, production lessons, and long-form notes from the workbench.
+    </p>
+    <div class="mt-10 flex flex-wrap gap-3">
+      <a class="rounded-md bg-ocean px-5 py-3 font-mono text-sm text-bg no-underline" href="/projects">
+        Projects
+      </a>
+      <a class="rounded-md border border-border px-5 py-3 font-mono text-sm text-primary no-underline hover:border-ocean" href="/writing">
+        Writing
+      </a>
+    </div>
+  </section>
+</BaseLayout>

@@ -4,10 +4,10 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "check": "astro check"
+    "dev": "ASTRO_TELEMETRY_DISABLED=1 astro dev",
+    "build": "ASTRO_TELEMETRY_DISABLED=1 astro check && ASTRO_TELEMETRY_DISABLED=1 astro build",
+    "preview": "ASTRO_TELEMETRY_DISABLED=1 astro preview",
+    "check": "ASTRO_TELEMETRY_DISABLED=1 astro check"
   },
   "dependencies": {
     "@astrojs/mdx": "^4.0.0",
@@ -17,8 +17,8 @@
     "@fontsource/bricolage-grotesque": "^5.1.0",
     "@fontsource/ibm-plex-mono": "^5.1.0",
     "@fontsource/ibm-plex-sans": "^5.1.0",
-    "astro": "^5.0.0",
-    "lucide-astro": "^0.468.0"
+    "@lucide/astro": "^1.21.0",
+    "astro": "^5.0.0"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.0",
