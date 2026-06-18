@@ -45,5 +45,36 @@ const { title, description, canonical, image, type } = Astro.props;
       <slot />
     </main>
     <Footer />
+    <div id="cursor-glow" aria-hidden="true"></div>
   </body>
+  <script>
+    (() => {
+      // Only on pointer devices
+      if (!window.matchMedia('(hover: hover)').matches) return;
+
+      const glow = document.getElementById('cursor-glow');
+      if (!glow) return;
+
+      let mx = window.innerWidth / 2;
+      let my = window.innerHeight / 2;
+      let cx = mx, cy = my;
+
+      document.addEventListener('mousemove', (e) => {
+        mx = e.clientX;
+        my = e.clientY;
+      });
+
+      // Fade out when cursor leaves window
+      document.addEventListener('mouseleave', () => { glow.style.opacity = '0'; });
+      document.addEventListener('mouseenter', () => { glow.style.opacity = ''; });
+
+      function tick() {
+        cx += (mx - cx) * 0.07;
+        cy += (my - cy) * 0.07;
+        glow.style.transform = `translate(${cx - 210}px, ${cy - 210}px)`;
+        requestAnimationFrame(tick);
+      }
+      tick();
+    })();
+  </script>
 </html>
