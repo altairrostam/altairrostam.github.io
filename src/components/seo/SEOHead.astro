@@ -25,6 +25,7 @@ const imageUrl = new URL(image, SITE_URL).toString();
 <title>{pageTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonicalUrl} />
+<link rel="alternate" type="application/rss+xml" title="Altair Rostam Writing" href={new URL('/rss.xml', SITE_URL).toString()} />
 
 <meta property="og:site_name" content={siteDefaults.name} />
 <meta property="og:title" content={pageTitle} />

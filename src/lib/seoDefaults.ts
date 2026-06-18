@@ -7,4 +7,5 @@ export const siteDefaults = {
     'Engineering notes, research writing, and project documentation from Altair Rostam.',
   author: 'Altair Rostam',
   ogImage: '/og-default.png',
+  rssTitle: 'Altair Rostam Writing',
 };
