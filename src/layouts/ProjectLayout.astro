@@ -1,0 +1,51 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import JsonLdCreativeWork from '@/components/seo/JsonLdCreativeWork.astro';
+import BaseLayout from './BaseLayout.astro';
+import { formatDate } from '@/lib/formatDate';
+
+type Props = {
+  entry: CollectionEntry<'projects'>;
+};
+
+const { entry } = Astro.props;
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.summary} canonical={`/projects/${entry.data.permalink}`}>
+  <JsonLdCreativeWork entry={entry} />
+  <article class="content-shell py-14 sm:py-20">
+    <header class="max-w-4xl">
+      <p class="metadata">{entry.data.status} / Updated {formatDate(entry.data.dateUpdated)}</p>
+      <h1 class="mt-5 font-heading text-[clamp(3rem,8vw,6rem)] font-extrabold leading-none">
+        {entry.data.title}
+      </h1>
+      <p class="mt-7 max-w-prose text-xl leading-8 text-secondary">{entry.data.summary}</p>
+      <dl class="mt-8 grid gap-4 border-y border-border py-6 sm:grid-cols-3">
+        <div>
+          <dt class="metadata">Role</dt>
+          <dd class="mt-2 text-primary">{entry.data.role}</dd>
+        </div>
+        <div>
+          <dt class="metadata">Started</dt>
+          <dd class="mt-2 text-primary">{formatDate(entry.data.dateStarted)}</dd>
+        </div>
+        <div>
+          <dt class="metadata">Updated</dt>
+          <dd class="mt-2 text-primary">{formatDate(entry.data.dateUpdated)}</dd>
+        </div>
+      </dl>
+      <ul class="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
+        {
+          entry.data.technologies.map((technology) => (
+            <li class="rounded-md border border-border bg-surface px-2.5 py-1 font-mono text-xs text-nature">
+              {technology}
+            </li>
+          ))
+        }
+      </ul>
+    </header>
+    <div class="prose-content mt-12">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>

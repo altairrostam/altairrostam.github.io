@@ -1,0 +1,31 @@
+---
+type Heading = {
+  depth: number;
+  slug: string;
+  text: string;
+};
+
+type Props = {
+  headings: Heading[];
+};
+
+const { headings } = Astro.props;
+const visibleHeadings = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
+---
+
+{
+  visibleHeadings.length > 0 && (
+    <aside class="rounded-lg border border-border bg-surface p-5">
+      <h2 class="font-mono text-sm font-medium text-primary">Contents</h2>
+      <ol class="mt-4 grid gap-2">
+        {visibleHeadings.map((heading) => (
+          <li class:list={[heading.depth === 3 && 'pl-4']}>
+            <a class="font-mono text-sm text-secondary no-underline hover:text-ocean" href={`#${heading.slug}`}>
+              {heading.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </aside>
+  )
+}

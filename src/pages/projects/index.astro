@@ -1,0 +1,22 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectCard from '@/components/projects/ProjectCard.astro';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const projects = (await getCollection('projects')).sort(
+  (a, b) => b.data.dateUpdated.valueOf() - a.data.dateUpdated.valueOf(),
+);
+---
+
+<BaseLayout title="Projects" description="Documented project work, architecture notes, tradeoffs, and lessons learned.">
+  <section class="content-shell py-14 sm:py-20">
+    <p class="metadata">Project work</p>
+    <h1 class="mt-4 font-heading text-[clamp(3rem,8vw,6rem)] font-extrabold leading-none">Projects</h1>
+    <p class="mt-6 max-w-prose text-lg leading-8 text-secondary">
+      Architecture notes, implementation tradeoffs, and lessons from systems that had to survive contact with real constraints.
+    </p>
+    <div class="mt-12 grid gap-6 md:grid-cols-2">
+      {projects.map((project) => <ProjectCard entry={project} />)}
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { SITE_URL, siteDefaults } from '@/lib/seoDefaults';
+
+type Props = {
+  entry: CollectionEntry<'projects'>;
+};
+
+const { entry } = Astro.props;
+
+const creativeWork = {
+  '@context': 'https://schema.org',
+  '@type': 'CreativeWork',
+  name: entry.data.title,
+  description: entry.data.summary,
+  dateCreated: entry.data.dateStarted.toISOString(),
+  dateModified: entry.data.dateUpdated.toISOString(),
+  keywords: entry.data.technologies,
+  creator: {
+    '@type': 'Person',
+    name: siteDefaults.author,
+    url: SITE_URL,
+  },
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(creativeWork)} />

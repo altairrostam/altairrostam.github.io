@@ -1,0 +1,47 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { SITE_URL, siteDefaults } from '@/lib/seoDefaults';
+
+type Props = {
+  entry: CollectionEntry<'writing'>;
+};
+
+const { entry } = Astro.props;
+const canonicalUrl = new URL(`/writing/${entry.data.permalink}`, SITE_URL).toString();
+const modifiedDate = entry.data.updatedDate ?? entry.data.publishDate;
+
+const blogPosting = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  headline: entry.data.title,
+  description: entry.data.description,
+  datePublished: entry.data.publishDate.toISOString(),
+  dateModified: modifiedDate.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: siteDefaults.author,
+    url: SITE_URL,
+  },
+  mainEntityOfPage: canonicalUrl,
+  keywords: entry.data.tags,
+};
+
+const faqPage =
+  entry.data.faq.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: entry.data.faq.map((item) => ({
+          '@type': 'Question',
+          name: item.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: item.answer,
+          },
+        })),
+      }
+    : undefined;
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(blogPosting)} />
+{faqPage && <script is:inline type="application/ld+json" set:html={JSON.stringify(faqPage)} />}

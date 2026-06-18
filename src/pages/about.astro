@@ -1,0 +1,31 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="About" description="About Altair Rostam, technical focus, working style, and interests.">
+  <section class="content-shell grid gap-12 py-14 sm:py-20 lg:grid-cols-[minmax(0,1fr)_240px] lg:items-start">
+    <div>
+      <p class="metadata">About</p>
+      <h1 class="mt-4 font-heading text-[clamp(3rem,8vw,6rem)] font-extrabold leading-none">Altair Rostam</h1>
+      <p class="mt-7 max-w-prose text-lg leading-8 text-secondary">
+        I build AI systems with an eye for retrieval quality, automation boundaries, evaluation loops, and the operational details that decide whether a prototype becomes useful.
+      </p>
+      <section class="mt-12 max-w-prose">
+        <h2 class="font-heading text-3xl font-semibold">How I work</h2>
+        <p class="mt-4 leading-8 text-secondary">
+          I like systems that are explicit about their assumptions. The work usually starts with a sharp problem statement, then moves through small experiments, documented tradeoffs, and a bias toward artifacts future-me can actually understand.
+        </p>
+      </section>
+    </div>
+    <figure class="mx-auto max-w-[220px] lg:mt-20">
+      <img
+        src="/images/mbti-clear.png"
+        alt="Illustrated personality sketch of Altair"
+        width="220"
+        height="220"
+        loading="lazy"
+      />
+      <figcaption class="metadata mt-3 text-center">Personality sketch / thinking style artifact</figcaption>
+    </figure>
+  </section>
+</BaseLayout>

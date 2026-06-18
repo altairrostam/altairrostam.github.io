@@ -1,0 +1,32 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { formatDate } from '@/lib/formatDate';
+
+type Props = {
+  entry: CollectionEntry<'projects'>;
+};
+
+const { entry } = Astro.props;
+---
+
+<article class="rounded-lg border border-border bg-surface p-6 shadow-soft">
+  <div class="flex flex-wrap items-center justify-between gap-3">
+    <span class="metadata">{entry.data.status}</span>
+    <span class="metadata">Updated {formatDate(entry.data.dateUpdated)}</span>
+  </div>
+  <h2 class="mt-5 font-heading text-3xl font-semibold leading-tight">
+    <a class="text-primary no-underline hover:text-ocean" href={`/projects/${entry.data.permalink}`}>
+      {entry.data.title}
+    </a>
+  </h2>
+  <p class="mt-4 text-secondary">{entry.data.summary}</p>
+  <ul class="mt-6 flex flex-wrap gap-2" aria-label="Technologies">
+    {
+      entry.data.technologies.map((technology) => (
+        <li class="rounded-md border border-border px-2.5 py-1 font-mono text-xs text-nature">
+          {technology}
+        </li>
+      ))
+    }
+  </ul>
+</article>

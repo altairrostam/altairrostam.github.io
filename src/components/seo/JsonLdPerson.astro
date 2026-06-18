@@ -1,0 +1,24 @@
+---
+import { SITE_URL, siteDefaults } from '@/lib/seoDefaults';
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: siteDefaults.author,
+  url: SITE_URL,
+  jobTitle: 'AI systems engineer',
+  sameAs: [
+    'https://github.com/altairrostam',
+    'https://www.linkedin.com/in/altairrostam',
+  ],
+  knowsAbout: [
+    'AI systems',
+    'retrieval',
+    'browser automation',
+    'technical architecture',
+    'LLM evaluation',
+  ],
+};
+---
+
+<script is:inline type="application/ld+json" set:html={JSON.stringify(person)} />

@@ -1,11 +1,24 @@
 ---
+import { getCollection } from 'astro:content';
+import ProjectCard from '@/components/projects/ProjectCard.astro';
+import ArticleCard from '@/components/writing/ArticleCard.astro';
+import JsonLdPerson from '@/components/seo/JsonLdPerson.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const featuredProjects = (await getCollection('projects', ({ data }) => data.featured))
+  .sort((a, b) => b.data.dateUpdated.valueOf() - a.data.dateUpdated.valueOf())
+  .slice(0, 3);
+
+const latestWriting = (await getCollection('writing', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
 ---
 
 <BaseLayout
   title="Altair Rostam"
   description="Engineering notes, research writing, and project documentation from Altair Rostam."
 >
+  <JsonLdPerson />
   <section class="content-shell py-20 sm:py-28">
     <p class="metadata mb-5">Engineering notebook / research journal</p>
     <h1 class="max-w-4xl font-heading text-[clamp(3rem,9vw,6.5rem)] font-extrabold leading-[0.96]">
@@ -21,6 +34,36 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       <a class="rounded-md border border-border px-5 py-3 font-mono text-sm text-primary no-underline hover:border-ocean" href="/writing">
         Writing
       </a>
+    </div>
+  </section>
+
+  <section class="border-t border-border py-14 sm:py-20">
+    <div class="content-shell">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="metadata">Selected systems</p>
+          <h2 class="mt-3 font-heading text-4xl font-semibold">Featured Projects</h2>
+        </div>
+        <a class="font-mono text-sm no-underline hover:text-primary" href="/projects">All projects</a>
+      </div>
+      <div class="mt-8 grid gap-6 md:grid-cols-2">
+        {featuredProjects.map((project) => <ProjectCard entry={project} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="border-t border-border py-14 sm:py-20">
+    <div class="content-shell">
+      <div class="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p class="metadata">Latest notes</p>
+          <h2 class="mt-3 font-heading text-4xl font-semibold">Writing</h2>
+        </div>
+        <a class="font-mono text-sm no-underline hover:text-primary" href="/writing">All writing</a>
+      </div>
+      <div class="mt-4">
+        {latestWriting.map((article) => <ArticleCard entry={article} />)}
+      </div>
     </div>
   </section>
 </BaseLayout>

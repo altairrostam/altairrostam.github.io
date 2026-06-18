@@ -1,0 +1,40 @@
+---
+title: Why Pure Vector Search Wasn't Enough
+permalink: why-pure-vector-search-wasnt-enough
+description: A practical note on why production search over AI assets needs structured metadata, lexical matching, and vectors working together.
+publishDate: 2026-01-20
+updatedDate: 2026-01-20
+tags:
+  - search
+  - retrieval
+  - ai-systems
+draft: false
+executiveSummary: Pure vector search is useful for semantic discovery, but production retrieval also needs exact matching, structured filters, and ranking controls that make failures debuggable.
+keyTakeaways:
+  - Vector similarity is strongest when intent is fuzzy, not when the query depends on exact identifiers.
+  - Metadata should stay structured so filters, facets, and ranking rules remain explainable.
+  - Hybrid retrieval makes search behavior easier to tune because each signal can be inspected separately.
+faq:
+  - question: Is vector search bad for technical catalogs?
+    answer: No. Vector search is valuable for semantic discovery, but it should usually be combined with keyword and metadata signals for technical catalogs.
+  - question: What is the biggest risk of pure vector search?
+    answer: The biggest risk is losing precision on exact terms such as model names, licenses, benchmark identifiers, or source-specific vocabulary.
+relatedSlugs:
+  - hybrid-search-6000-models-and-datasets
+---
+
+## Context
+
+Vector search makes demos feel magical because it handles vague intent well. In production catalogs, though, users do not only ask vague questions. They search for exact model families, dataset names, licenses, tasks, providers, and benchmark terms.
+
+## What Changed
+
+The system became more reliable once vectors stopped being the only source of truth. Keyword scoring handled exact text. Structured metadata handled filters and facets. Vector similarity handled semantic expansion.
+
+## System Implications
+
+Hybrid search asks more of the engineering team. Ranking logic needs observability, and each signal needs a clear reason to exist. The payoff is that failures become debuggable instead of mysterious.
+
+## Practical Takeaway
+
+Use vectors as one ranking signal, not as an excuse to flatten the rest of the domain model. The more technical the catalog, the more valuable structured metadata becomes.
