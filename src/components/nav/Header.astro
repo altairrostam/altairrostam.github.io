@@ -2,12 +2,9 @@
 import ThemeToggle from './ThemeToggle.astro';
 
 const navItems = [
-  { href: '/', label: 'Home' },
   { href: '/projects', label: 'Projects' },
   { href: '/writing', label: 'Writing' },
   { href: '/about', label: 'About' },
-  { href: '/now', label: 'Now' },
-  { href: '/resume', label: 'Resume' },
 ];
 
 const pathname = Astro.url.pathname;
@@ -40,7 +37,13 @@ const pathname = Astro.url.pathname;
       }
     </nav>
 
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-3">
+      <a
+        class="hidden font-mono text-[0.75rem] text-secondary no-underline opacity-60 hover:opacity-100 md:inline"
+        href="/resume"
+      >
+        résumé ↗
+      </a>
       <ThemeToggle />
       <button
         class="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary md:hidden"
