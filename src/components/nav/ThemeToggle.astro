@@ -2,6 +2,7 @@
   class="theme-toggle inline-flex h-10 w-10 items-center justify-center rounded-md border border-border text-primary transition hover:border-ocean hover:text-ocean"
   type="button"
   aria-label="Toggle color theme"
+  aria-pressed="false"
   data-theme-toggle
 >
   <svg
@@ -43,11 +44,18 @@
 <script>
   const toggle = document.querySelector('[data-theme-toggle]');
 
+  const syncPressedState = () => {
+    toggle?.setAttribute('aria-pressed', String(document.documentElement.classList.contains('dark')));
+  };
+
+  syncPressedState();
+
   toggle?.addEventListener('click', () => {
     const root = document.documentElement;
     const nextTheme = root.classList.contains('dark') ? 'light' : 'dark';
 
     root.classList.toggle('dark', nextTheme === 'dark');
     window.localStorage.setItem('theme', nextTheme);
+    syncPressedState();
   });
 </script>

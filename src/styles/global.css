@@ -16,7 +16,7 @@
   --surface: #ebe8e0;
   --text-primary: #2e3b3f;
   --text-secondary: #5d6b6f;
-  --accent-ocean: #4f7a7a;
+  --accent-ocean: #476f6f;
   --accent-nature: #788b6a;
   --accent-warm: #a07a5a;
   --border: #d7d2c5;
@@ -73,6 +73,21 @@
   :focus-visible {
     outline: 2px solid var(--accent-warm);
     outline-offset: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
   }
 }
 
