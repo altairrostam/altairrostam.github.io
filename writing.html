@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="Longer pieces by Altair R. on engineering practice, systems, career, and the parts of software work that become visible under pressure."
+      content="Essays and notes by Altair R. on engineering practice, systems, AI, career, and the small observations that stick."
     >
     <title>Writing | Altair R.</title>
     <script>
@@ -42,7 +42,6 @@
           </a>
           <div class="nav-links">
             <a href="writing.html" aria-current="page">writing</a>
-            <a href="notes.html">notes</a>
             <a href="work.html">work</a>
             <a href="about.html">about</a>
             <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
@@ -70,60 +69,172 @@
             </span>
             Writing
           </h1>
-          <p>Longer pieces, argued out fully. The short-form stuff lives in <a href="notes.html">notes</a>.</p>
+          <p>Essays, notes, and working observations in one stream. Some are argued out fully; some are just useful enough to keep.</p>
         </header>
 
-        <section class="essay-list" aria-label="Writing archive">
-          <article>
-            <a href="writing/the-on-call-rotation-is-a-management-tool.html">
-              <div class="entry-meta">
+        <div class="tag-filter" aria-label="Filter writing by tag">
+          <button type="button" data-filter-tag="ai">ai</button>
+          <button type="button" data-filter-tag="practice">practice</button>
+          <button type="button" data-filter-tag="systems">systems</button>
+          <button type="button" data-filter-tag="misc">misc</button>
+          <button type="button" data-filter-tag="career">career</button>
+          <button type="button" data-filter-tag="hiring">hiring</button>
+          <button type="button" data-filter-tag="personal">personal</button>
+        </div>
+
+        <section aria-label="Writing archive">
+          <ol class="note-list archive-list">
+            <li data-note-tag="ai">
+              <a href="notes/ai-engineering-is-software-engineering-with-one-extra-api-call.html">
+                <time datetime="2026-08-24">2026.08.24</time>
+                <span>
+                  <strong>AI engineering is software engineering with one extra API call</strong>
+                  <em>The hard parts were never the model.</em>
+                </span>
+                <small>note / ai</small>
+              </a>
+            </li>
+            <li data-note-tag="practice">
+              <a href="#">
+                <time datetime="2026-08-11">2026.08.11</time>
+                <span>
+                  <strong>Nobody owns the boring half</strong>
+                  <em>Migrations, cleanup, the ticket nobody wants.</em>
+                </span>
+                <small>note / practice</small>
+              </a>
+            </li>
+            <li data-note-tag="systems">
+              <a href="#">
+                <time datetime="2026-07-29">2026.07.29</time>
+                <span>
+                  <strong>Standards that are really suggestions</strong>
+                  <em>Style guides nobody's blocked a PR on.</em>
+                </span>
+                <small>note / systems</small>
+              </a>
+            </li>
+            <li data-note-tag="misc">
+              <a href="#">
+                <time datetime="2026-07-15">2026.07.15</time>
+                <span>
+                  <strong>How to answer without being useless</strong>
+                  <em>On giving people something they can act on.</em>
+                </span>
+                <small>note / misc</small>
+              </a>
+            </li>
+            <li data-note-tag="practice">
+              <a href="writing/the-on-call-rotation-is-a-management-tool.html">
                 <time datetime="2026-07-02">2026.07.02</time>
-                <small>practice</small>
-              </div>
-              <h2>The on-call rotation is a management tool</h2>
-              <p>It gets sold as an engineering hygiene problem. It's a proxy for whether anyone above you understands the system.</p>
-            </a>
-          </article>
-          <article>
-            <a href="#">
-              <div class="entry-meta">
+                <span>
+                  <strong>The on-call rotation is a management tool</strong>
+                  <em>It gets sold as engineering hygiene. It is really organizational telemetry.</em>
+                </span>
+                <small>essay / practice</small>
+              </a>
+            </li>
+            <li data-note-tag="personal">
+              <a href="#">
+                <time datetime="2026-06-30">2026.06.30</time>
+                <span>
+                  <strong>Ran out of milk, made the coffee anyway</strong>
+                  <em>Small domestic failures and what fixes them.</em>
+                </span>
+                <small>note / personal</small>
+              </a>
+            </li>
+            <li data-note-tag="systems">
+              <a href="#">
+                <time datetime="2026-06-09">2026.06.09</time>
+                <span>
+                  <strong>The bug was a calendar, not a bug</strong>
+                  <em>DST again. It's always DST.</em>
+                </span>
+                <small>note / systems</small>
+              </a>
+            </li>
+            <li data-note-tag="personal">
+              <a href="#">
+                <time datetime="2026-05-22">2026.05.22</time>
+                <span>
+                  <strong>A week off the pager</strong>
+                  <em>What I noticed about my own attention.</em>
+                </span>
+                <small>note / personal</small>
+              </a>
+            </li>
+            <li data-note-tag="systems">
+              <a href="#">
                 <time datetime="2026-05-18">2026.05.18</time>
-                <small>systems</small>
-              </div>
-              <h2>What "production-ready" actually verifies</h2>
-              <p>Not that it works. That someone is willing to be paged for it.</p>
-            </a>
-          </article>
-          <article>
-            <a href="#">
-              <div class="entry-meta">
+                <span>
+                  <strong>What "production-ready" actually verifies</strong>
+                  <em>Not that it works. That someone is willing to be paged for it.</em>
+                </span>
+                <small>essay / systems</small>
+              </a>
+            </li>
+            <li data-note-tag="practice">
+              <a href="#">
+                <time datetime="2026-05-03">2026.05.03</time>
+                <span>
+                  <strong>Grep before you architect</strong>
+                  <em>Most "redesigns" are a search you didn't run.</em>
+                </span>
+                <small>note / practice</small>
+              </a>
+            </li>
+            <li data-note-tag="ai">
+              <a href="#">
+                <time datetime="2026-04-19">2026.04.19</time>
+                <span>
+                  <strong>What LLMs are actually bad at reviewing</strong>
+                  <em>Confidence and correctness aren't the same signal.</em>
+                </span>
+                <small>note / ai</small>
+              </a>
+            </li>
+            <li data-note-tag="personal">
+              <a href="#">
+                <time datetime="2026-04-02">2026.04.02</time>
+                <span>
+                  <strong>Moved a plant, it lived</strong>
+                  <em>Lower the stakes on purpose sometimes.</em>
+                </span>
+                <small>note / personal</small>
+              </a>
+            </li>
+            <li data-note-tag="career">
+              <a href="#">
                 <time datetime="2026-03-30">2026.03.30</time>
-                <small>career</small>
-              </div>
-              <h2>Roaming: a case for generalists on senior teams</h2>
-              <p>Specialization is a bet that the problem holds still long enough to be worth it. It usually doesn't.</p>
-            </a>
-          </article>
-          <article>
-            <a href="#">
-              <div class="entry-meta">
+                <span>
+                  <strong>Roaming: a case for generalists on senior teams</strong>
+                  <em>Specialization is a bet that the problem holds still long enough to be worth it.</em>
+                </span>
+                <small>essay / career</small>
+              </a>
+            </li>
+            <li data-note-tag="practice">
+              <a href="#">
                 <time datetime="2026-01-14">2026.01.14</time>
-                <small>practice</small>
-              </div>
-              <h2>Postmortems nobody reads</h2>
-              <p>The document isn't the deliverable. The person who now flinches at that code path is.</p>
-            </a>
-          </article>
-          <article>
-            <a href="#">
-              <div class="entry-meta">
+                <span>
+                  <strong>Postmortems nobody reads</strong>
+                  <em>The document isn't the deliverable. The changed reflex is.</em>
+                </span>
+                <small>essay / practice</small>
+              </a>
+            </li>
+            <li data-note-tag="hiring">
+              <a href="#">
                 <time datetime="2025-11-02">2025.11.02</time>
-                <small>hiring</small>
-              </div>
-              <h2>The interview problem is a proxy for a worse one</h2>
-              <p>You're not testing for the algorithm. You're testing for whether they'll tell you it's wrong.</p>
-            </a>
-          </article>
+                <span>
+                  <strong>The interview problem is a proxy for a worse one</strong>
+                  <em>You're testing for whether they'll tell you it's wrong.</em>
+                </span>
+                <small>essay / hiring</small>
+              </a>
+            </li>
+          </ol>
         </section>
       </main>
 
