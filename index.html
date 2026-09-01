@@ -23,20 +23,14 @@
   <body>
     <div class="site">
       <section class="home-hero" aria-labelledby="home-title">
-        <button class="city-stage" type="button" aria-label="Travel to the next time of day" data-city-stage>
-          <span class="city-frame is-active" data-phase-frame="dawn" style="background-image: url('assets/city/dawn.png')"></span>
-          <span class="city-frame" data-phase-frame="day" style="background-image: url('assets/city/day.png')"></span>
-          <span class="city-frame" data-phase-frame="golden" style="background-image: url('assets/city/golden.png')"></span>
-          <span class="city-frame" data-phase-frame="sunset" style="background-image: url('assets/city/sunset.png')"></span>
-          <span class="city-frame" data-phase-frame="nightfall" style="background-image: url('assets/city/nightfall.png')"></span>
-          <span class="city-frame" data-phase-frame="night" style="background-image: url('assets/city/night.png')"></span>
-          <span class="city-tint" data-city-tint></span>
-          <span class="city-lamps" aria-hidden="true" data-city-lamps></span>
-          <span class="city-scrim" data-city-scrim></span>
+        <div class="city-stage" aria-hidden="true">
+          <span class="city-frame is-active" style="background-image: url('assets/city/golden.png')"></span>
+          <span class="city-tint"></span>
+          <span class="city-scrim"></span>
           <span class="city-fade"></span>
-        </button>
+        </div>
 
-        <div class="hero-content" data-hero-content>
+        <div class="hero-content">
           <nav class="nav" aria-label="Primary navigation">
             <a class="brand" href="index.html" aria-label="Altair R. home">
               <span class="brand-mark" aria-hidden="true">
@@ -65,10 +59,6 @@
             <p>Software engineer, roamer by role - I work on whatever is actually broken.</p>
           </header>
 
-          <div class="hero-meta">
-            <span data-city-caption>your time over the valley</span>
-            <button class="travel-reset" type="button" data-travel-reset>tap the valley to travel</button>
-          </div>
         </div>
       </section>
 
