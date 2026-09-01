@@ -90,6 +90,7 @@ function initCityStage(stage) {
   const reset = scope.querySelector("[data-travel-reset]");
   const heroContent = scope.querySelector("[data-hero-content]");
   const overlayContent = heroContent || scope.querySelector(".page-nav");
+  const compactBand = stage.classList.contains("city-band");
   let manualIndex = null;
   let clock = new Date();
 
@@ -109,12 +110,14 @@ function initCityStage(stage) {
     });
 
     if (tint) tint.style.background = phase.tint;
-    if (scrim) {
+    if (scrim && compactBand) {
+      scrim.style.background = "linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0) 56%), linear-gradient(180deg, rgba(var(--paper-rgb), 0.12), rgba(var(--paper-rgb), 0.02))";
+    } else if (scrim) {
       scrim.style.background = phase.darkImage
         ? "linear-gradient(180deg, rgba(28, 30, 36, 0.62), rgba(28, 30, 36, 0.30) 44%, rgba(28, 30, 36, 0) 66%)"
         : "linear-gradient(180deg, rgba(var(--paper-rgb), 0.86), rgba(var(--paper-rgb), 0.42) 42%, rgba(var(--paper-rgb), 0) 68%)";
     }
-    if (overlayContent) overlayContent.style.color = phase.darkImage ? "var(--paper)" : "var(--ink)";
+    if (overlayContent) overlayContent.style.color = phase.darkImage ? "var(--image-ink)" : "var(--ink)";
     if (caption) {
       caption.textContent = manualIndex === null
         ? `${hours}:${minutes} your time - ${phase.label} over the valley`

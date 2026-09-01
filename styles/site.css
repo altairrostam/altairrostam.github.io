@@ -6,10 +6,12 @@
   --pink: #a63a50;
   --blue: #6c8ead;
   --rust: #a1674a;
+  --image-ink: #f3e9dc;
   --rule: rgba(var(--ink-rgb), 0.12);
   --faint: rgba(var(--ink-rgb), 0.58);
   --muted: rgba(var(--ink-rgb), 0.42);
-  --scrollbar-thumb: #c48a68;
+  --scrollbar-thumb: #a63a50;
+  --scrollbar-thumb-hover: #6c8ead;
   --font-serif: "Newsreader", Georgia, serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", monospace;
   color-scheme: light;
@@ -23,10 +25,12 @@
   --pink: #d97690;
   --blue: #8fb3d6;
   --rust: #d99b72;
+  --image-ink: #f3e9dc;
   --rule: rgba(var(--ink-rgb), 0.14);
   --faint: rgba(var(--ink-rgb), 0.62);
   --muted: rgba(var(--ink-rgb), 0.45);
-  --scrollbar-thumb: #6e5a45;
+  --scrollbar-thumb: #d97690;
+  --scrollbar-thumb-hover: #8fb3d6;
   color-scheme: dark;
 }
 
@@ -73,8 +77,12 @@ body::after {
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 20px;
+  border-radius: 10px;
   background: var(--scrollbar-thumb);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
 a {
@@ -366,6 +374,7 @@ button:focus-visible {
 
 .city-band .city-frame {
   background-position: center 46%;
+  background-size: cover;
 }
 
 .city-band::before,
@@ -373,8 +382,8 @@ button:focus-visible {
   position: absolute;
   top: 0;
   bottom: 0;
-  z-index: 1;
-  width: 10%;
+  z-index: 2;
+  width: min(11vw, 120px);
   pointer-events: none;
   content: "";
 }
@@ -389,13 +398,20 @@ button:focus-visible {
   background: linear-gradient(270deg, var(--paper), rgba(var(--paper-rgb), 0));
 }
 
+.city-band .city-scrim {
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0) 56%),
+    linear-gradient(180deg, rgba(var(--paper-rgb), 0.12), rgba(var(--paper-rgb), 0.02));
+  mix-blend-mode: multiply;
+}
+
 .city-band .city-fade {
-  z-index: 1;
-  height: 34%;
+  z-index: 2;
+  height: 44%;
   background: linear-gradient(
     180deg,
     rgba(var(--paper-rgb), 0),
-    rgba(var(--paper-rgb), 0.75) 65%,
+    rgba(var(--paper-rgb), 0.74) 62%,
     var(--paper)
   );
 }
@@ -803,6 +819,30 @@ button:focus-visible {
   object-fit: cover;
 }
 
+.about-contact {
+  padding: 0 0 70px;
+  font-size: 12px;
+}
+
+.about-contact h2 {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.about-contact p {
+  margin: 0;
+  color: var(--faint);
+}
+
+.about-contact code {
+  color: var(--rust);
+  font-family: var(--font-mono);
+}
+
 .resume-sheet {
   margin: 36px 0 70px;
   padding: 42px 46px;
@@ -998,6 +1038,7 @@ button:focus-visible {
 
 .footer {
   display: flex;
+  align-items: center;
   gap: 18px;
   flex-wrap: wrap;
   padding-top: 32px;
@@ -1012,8 +1053,39 @@ button:focus-visible {
   margin-left: auto;
 }
 
+.footer .icon-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  color: var(--faint);
+}
+
+.footer .icon-link:hover {
+  color: var(--pink);
+}
+
+.footer svg {
+  width: 17px;
+  height: 17px;
+  fill: currentColor;
+}
+
 .resume-link {
   color: var(--rust);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: 640px) {
@@ -1068,7 +1140,13 @@ button:focus-visible {
   }
 
   .page-band {
-    height: 190px;
+    height: 150px;
+    margin-bottom: 10px;
+  }
+
+  .city-band .city-frame {
+    background-position: center top;
+    background-size: auto 100%;
   }
 
   .content-main {
