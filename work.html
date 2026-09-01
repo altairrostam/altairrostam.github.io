@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Work history, projects, and open source notes from Altair R.">
+    <title>Work | Altair R.</title>
+    <script>
+      const storedTheme = localStorage.getItem("altair-theme");
+      if (storedTheme === "dark") document.documentElement.classList.add("dark");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/site.css">
+  </head>
+  <body>
+    <div class="site">
+      <header class="page-band">
+        <div class="city-band" aria-hidden="true" data-city-stage>
+          <span class="city-frame is-active" data-phase-frame="dawn" style="background-image: url('assets/city/dawn.png')"></span>
+          <span class="city-frame" data-phase-frame="day" style="background-image: url('assets/city/day.png')"></span>
+          <span class="city-frame" data-phase-frame="golden" style="background-image: url('assets/city/golden.png')"></span>
+          <span class="city-frame" data-phase-frame="sunset" style="background-image: url('assets/city/sunset.png')"></span>
+          <span class="city-frame" data-phase-frame="nightfall" style="background-image: url('assets/city/nightfall.png')"></span>
+          <span class="city-frame" data-phase-frame="night" style="background-image: url('assets/city/night.png')"></span>
+          <span class="city-tint" data-city-tint></span>
+          <span class="city-lamps" data-city-lamps></span>
+          <span class="city-scrim" data-city-scrim></span>
+          <span class="city-fade"></span>
+        </div>
+        <nav class="nav page-nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html" aria-label="Altair R. home">
+            <span class="brand-mark" aria-hidden="true"><span></span></span>
+            <span>altair r.</span>
+          </a>
+          <div class="nav-links">
+            <a href="writing.html">writing</a>
+            <a href="notes.html">notes</a>
+            <a href="work.html" aria-current="page">work</a>
+            <a href="about.html">about</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+              <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"></path>
+              </svg>
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="content-main">
+        <header class="page-header">
+          <h1>
+            <span class="title-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M3 14h18"></path>
+                <path d="M5 14v6h14v-6"></path>
+                <path d="M9 14V9a3 3 0 0 1 6 0v5"></path>
+                <path d="M7 9h2M15 9h2"></path>
+              </svg>
+            </span>
+            Work
+          </h1>
+          <p>Fourteen years, moved whenever something broke that I could actually fix.</p>
+        </header>
+
+        <section class="work-section" aria-label="Experience">
+          <article class="role">
+            <div class="role-heading">
+              <h2>Staff Engineer</h2>
+              <span>Ferrovia</span>
+              <time>2024 - now</time>
+            </div>
+            <ul>
+              <li>Joined to fix one payments reconciliation job; ended up owning the three systems it touched.</li>
+              <li>Reduced incident volume on the settlement pipeline by rebuilding its retry semantics, not by adding more alerting.</li>
+              <li>Spend most weeks on whatever the on-call channel is loudest about.</li>
+            </ul>
+          </article>
+          <article class="role">
+            <div class="role-heading">
+              <h2>Senior Engineer</h2>
+              <span>Loom &amp; Wire</span>
+              <time>2021 - 2024</time>
+            </div>
+            <ul>
+              <li>Rewrote the inventory sync service after the third time it silently double-counted stock.</li>
+              <li>Ran the migration off the vendor search index nobody else wanted to touch.</li>
+              <li>Mentored two engineers who now run the team I used to be on.</li>
+            </ul>
+          </article>
+          <article class="role">
+            <div class="role-heading">
+              <h2>Software Engineer</h2>
+              <span>Basin Health</span>
+              <time>2018 - 2021</time>
+            </div>
+            <ul>
+              <li>Built the clinic scheduling backend from a spreadsheet and a promise.</li>
+              <li>Spent a year on HIPAA-adjacent plumbing nobody else wanted to own.</li>
+              <li>Left when the interesting problems ran out, not before.</li>
+            </ul>
+          </article>
+          <article class="role">
+            <div class="role-heading">
+              <h2>Software Engineer</h2>
+              <span>Kettlebell Labs</span>
+              <time>2015 - 2018</time>
+            </div>
+            <ul>
+              <li>First real engineering job; shipped the checkout flow that's still in production.</li>
+              <li>Learned what "done" means from an on-call rotation of one.</li>
+              <li>Broke prod twice, wrote both postmortems myself.</li>
+            </ul>
+          </article>
+        </section>
+
+        <section class="work-section" aria-labelledby="projects-title">
+          <h2 class="mini-heading" id="projects-title">Projects</h2>
+          <ol class="project-list">
+            <li><a class="project-row" href="#"><strong>runbook</strong><span>A static-site generator for on-call docs that fails the build if a link is stale.</span><small>go</small></a></li>
+            <li><a class="project-row" href="#"><strong>quietpager</strong><span>Pager-duty analytics that surfaces which services are actually loud, not which alerts fired most.</span><small>typescript</small></a></li>
+            <li><a class="project-row" href="#"><strong>backfill</strong><span>A CLI for replaying production traffic against a staging index without melting it.</span><small>rust</small></a></li>
+          </ol>
+        </section>
+
+        <section class="work-section" aria-labelledby="open-source-title">
+          <h2 class="mini-heading" id="open-source-title">Open Source</h2>
+          <ol class="project-list">
+            <li><a class="project-row" href="#"><strong>postgres-lag-exporter</strong><span>Small metrics exporter for replication lag; still gets the occasional PR.</span><small>maintainer</small></a></li>
+            <li><a class="project-row" href="#"><strong>sidekiq</strong><span>A few merged fixes around dead job retries.</span><small>contributor</small></a></li>
+            <li><a class="project-row" href="#"><strong>httpx</strong><span>Fixed a timeout edge case that took longer to reproduce than to fix.</span><small>contributor</small></a></li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a href="mailto:altairrostam@gmail.com">altairrostam@gmail.com</a>
+        <a href="https://github.com/altairrostam">github</a>
+        <a href="https://linkedin.com/in/altair-r">linkedin</a>
+        <a class="resume-link" href="resume.html">resume</a>
+        <a href="rss.xml">rss</a>
+      </footer>
+    </div>
+    <script src="scripts/site.js" defer></script>
+  </body>
+</html>

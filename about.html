@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="About Altair R., a software engineer who works across backend, infra, reliability, and the awkward edges between systems.">
+    <title>About | Altair R.</title>
+    <script>
+      const storedTheme = localStorage.getItem("altair-theme");
+      if (storedTheme === "dark") document.documentElement.classList.add("dark");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/site.css">
+  </head>
+  <body>
+    <div class="site">
+      <header class="page-band">
+        <div class="city-band" aria-hidden="true" data-city-stage>
+          <span class="city-frame is-active" data-phase-frame="dawn" style="background-image: url('assets/city/dawn.png')"></span>
+          <span class="city-frame" data-phase-frame="day" style="background-image: url('assets/city/day.png')"></span>
+          <span class="city-frame" data-phase-frame="golden" style="background-image: url('assets/city/golden.png')"></span>
+          <span class="city-frame" data-phase-frame="sunset" style="background-image: url('assets/city/sunset.png')"></span>
+          <span class="city-frame" data-phase-frame="nightfall" style="background-image: url('assets/city/nightfall.png')"></span>
+          <span class="city-frame" data-phase-frame="night" style="background-image: url('assets/city/night.png')"></span>
+          <span class="city-tint" data-city-tint></span>
+          <span class="city-lamps" data-city-lamps></span>
+          <span class="city-scrim" data-city-scrim></span>
+          <span class="city-fade"></span>
+        </div>
+        <nav class="nav page-nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html" aria-label="Altair R. home">
+            <span class="brand-mark" aria-hidden="true"><span></span></span>
+            <span>altair r.</span>
+          </a>
+          <div class="nav-links">
+            <a href="writing.html">writing</a>
+            <a href="notes.html">notes</a>
+            <a href="work.html">work</a>
+            <a href="about.html" aria-current="page">about</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+              <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"></path>
+              </svg>
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="content-main">
+        <header class="page-header">
+          <h1>
+            <span class="title-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 3v3M12 18v3M3 12h3M18 12h3"></path>
+                <path d="M15 9l-4 3-1 4 4-3z"></path>
+              </svg>
+            </span>
+            About
+          </h1>
+        </header>
+
+        <section class="about-body">
+          <p>Fourteen years writing software, most of it spent on the parts of a system nobody wanted to claim: the migration, the retry logic, the pager. I've been backend, infra, and once for a bad quarter, half of a frontend team - not because I'm hard to place, but because whatever was on fire needed someone who had already fixed something like it. I grew up moving between four cities and never fully lost the habit; I still do not buy furniture I would mind leaving behind. I run, badly, in the mornings before the pager has a chance to weigh in on my day, and I read more nonfiction than I finish. Currently a staff engineer, still on the pager, still not sure that is a title and not a description of a personality flaw.</p>
+          <figure class="portrait">
+            <img src="assets/images/portrait.jpg" alt="Altair R.">
+          </figure>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a href="mailto:altairrostam@gmail.com">altairrostam@gmail.com</a>
+        <a href="https://github.com/altairrostam">github</a>
+        <a href="https://linkedin.com/in/altair-r">linkedin</a>
+        <a class="resume-link" href="resume.html">resume</a>
+        <a href="rss.xml">rss</a>
+      </footer>
+    </div>
+    <script src="scripts/site.js" defer></script>
+  </body>
+</html>

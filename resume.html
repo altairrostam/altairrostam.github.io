@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Résumé for Altair R., software engineer.">
+    <title>Resume | Altair R.</title>
+    <script>
+      const storedTheme = localStorage.getItem("altair-theme");
+      if (storedTheme === "dark") document.documentElement.classList.add("dark");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/site.css">
+  </head>
+  <body>
+    <div class="site">
+      <header class="page-band">
+        <div class="city-band" aria-hidden="true" data-city-stage>
+          <span class="city-frame is-active" data-phase-frame="dawn" style="background-image: url('assets/city/dawn.png')"></span>
+          <span class="city-frame" data-phase-frame="day" style="background-image: url('assets/city/day.png')"></span>
+          <span class="city-frame" data-phase-frame="golden" style="background-image: url('assets/city/golden.png')"></span>
+          <span class="city-frame" data-phase-frame="sunset" style="background-image: url('assets/city/sunset.png')"></span>
+          <span class="city-frame" data-phase-frame="nightfall" style="background-image: url('assets/city/nightfall.png')"></span>
+          <span class="city-frame" data-phase-frame="night" style="background-image: url('assets/city/night.png')"></span>
+          <span class="city-tint" data-city-tint></span>
+          <span class="city-lamps" data-city-lamps></span>
+          <span class="city-scrim" data-city-scrim></span>
+          <span class="city-fade"></span>
+        </div>
+        <nav class="nav page-nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html" aria-label="Altair R. home">
+            <span class="brand-mark" aria-hidden="true"><span></span></span>
+            <span>altair r.</span>
+          </a>
+          <div class="nav-links">
+            <a href="writing.html">writing</a>
+            <a href="notes.html">notes</a>
+            <a href="work.html">work</a>
+            <a href="about.html">about</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+              <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"></path>
+              </svg>
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="content-main">
+        <a class="back-link" href="assets/files/resume.pdf">download pdf</a>
+        <section class="resume-sheet" aria-label="Resume">
+          <header class="resume-top">
+            <div>
+              <h1>Altair R.</h1>
+              <p>Software engineer, roamer by role - I work on whatever is actually broken.</p>
+            </div>
+            <div class="resume-contact">
+              <div>altairrostam@gmail.com</div>
+              <div>github.com/altairrostam</div>
+              <div>linkedin.com/in/altair-r</div>
+            </div>
+          </header>
+
+          <section class="resume-block">
+            <h2>Experience</h2>
+            <article class="resume-item">
+              <h3>Staff Engineer <span>Ferrovia</span> <time>2024 - now</time></h3>
+              <ul>
+                <li>Joined to fix one payments reconciliation job; ended up owning the three systems it touched.</li>
+                <li>Reduced incident volume on the settlement pipeline by rebuilding its retry semantics, not by adding more alerting.</li>
+              </ul>
+            </article>
+            <article class="resume-item">
+              <h3>Senior Engineer <span>Loom &amp; Wire</span> <time>2021 - 2024</time></h3>
+              <ul>
+                <li>Rewrote the inventory sync service after the third time it silently double-counted stock.</li>
+                <li>Ran the migration off the vendor search index nobody else wanted to touch.</li>
+              </ul>
+            </article>
+            <article class="resume-item">
+              <h3>Software Engineer <span>Basin Health</span> <time>2018 - 2021</time></h3>
+              <ul>
+                <li>Built the clinic scheduling backend from a spreadsheet and a promise.</li>
+                <li>Spent a year on HIPAA-adjacent plumbing nobody else wanted to own.</li>
+              </ul>
+            </article>
+            <article class="resume-item">
+              <h3>Software Engineer <span>Kettlebell Labs</span> <time>2015 - 2018</time></h3>
+              <ul>
+                <li>First real engineering job; shipped the checkout flow that's still in production.</li>
+                <li>Learned what "done" means from an on-call rotation of one.</li>
+              </ul>
+            </article>
+          </section>
+
+          <div class="resume-grid">
+            <section class="resume-block">
+              <h2>Projects</h2>
+              <article class="resume-item">
+                <h3>runbook <small>go</small></h3>
+                <p>Static-site generator for on-call docs; fails the build on a stale link.</p>
+              </article>
+              <article class="resume-item">
+                <h3>quietpager <small>typescript</small></h3>
+                <p>Pager-duty analytics surfacing which services are actually loud.</p>
+              </article>
+              <article class="resume-item">
+                <h3>backfill <small>rust</small></h3>
+                <p>CLI for replaying production traffic against staging without melting it.</p>
+              </article>
+            </section>
+
+            <section class="resume-block">
+              <h2>Open Source</h2>
+              <article class="resume-item">
+                <h3>postgres-lag-exporter <small>maintainer</small></h3>
+                <p>Small metrics exporter for replication lag.</p>
+              </article>
+              <article class="resume-item">
+                <h3>sidekiq <small>contributor</small></h3>
+                <p>A few merged fixes around dead job retries.</p>
+              </article>
+              <article class="resume-item">
+                <h3>httpx <small>contributor</small></h3>
+                <p>Fixed a timeout edge case that took longer to reproduce than to fix.</p>
+              </article>
+            </section>
+          </div>
+
+          <footer class="resume-note">
+            <span>Full history and writing at the site this resume links from.</span>
+            <span>Updated 2026.08</span>
+          </footer>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a href="mailto:altairrostam@gmail.com">altairrostam@gmail.com</a>
+        <a href="https://github.com/altairrostam">github</a>
+        <a href="https://linkedin.com/in/altair-r">linkedin</a>
+        <a class="resume-link" href="assets/files/resume.pdf">resume.pdf</a>
+        <a href="rss.xml">rss</a>
+      </footer>
+    </div>
+    <script src="scripts/site.js" defer></script>
+  </body>
+</html>
