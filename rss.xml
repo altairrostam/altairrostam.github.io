@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Altair R.</title>
+    <link>https://altairrostam.com/</link>
+    <description>Writing and notes from Altair R. on software, systems, and engineering practice.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 24 Aug 2026 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://altairrostam.com/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI engineering is software engineering with one extra API call</title>
+      <link>https://altairrostam.com/notes/ai-engineering-is-software-engineering-with-one-extra-api-call.html</link>
+      <guid>https://altairrostam.com/notes/ai-engineering-is-software-engineering-with-one-extra-api-call.html</guid>
+      <pubDate>Mon, 24 Aug 2026 00:00:00 +0000</pubDate>
+      <description>The hard parts were never the model.</description>
+    </item>
+    <item>
+      <title>The on-call rotation is a management tool</title>
+      <link>https://altairrostam.com/writing/the-on-call-rotation-is-a-management-tool.html</link>
+      <guid>https://altairrostam.com/writing/the-on-call-rotation-is-a-management-tool.html</guid>
+      <pubDate>Thu, 02 Jul 2026 00:00:00 +0000</pubDate>
+      <description>What on-call rotations reveal about engineering management and reliability priorities.</description>
+    </item>
+  </channel>
+</rss>
