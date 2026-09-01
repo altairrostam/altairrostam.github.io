@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="Short notes by Altair R. on software, systems, AI, practice, and small useful observations."
+    >
+    <title>Notes | Altair R.</title>
+    <script>
+      const storedTheme = localStorage.getItem("altair-theme");
+      if (storedTheme === "dark") document.documentElement.classList.add("dark");
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles/site.css">
+  </head>
+  <body>
+    <div class="site">
+      <header class="page-band">
+        <div class="city-band" aria-hidden="true" data-city-stage>
+          <span class="city-frame is-active" data-phase-frame="dawn" style="background-image: url('assets/city/dawn.png')"></span>
+          <span class="city-frame" data-phase-frame="day" style="background-image: url('assets/city/day.png')"></span>
+          <span class="city-frame" data-phase-frame="golden" style="background-image: url('assets/city/golden.png')"></span>
+          <span class="city-frame" data-phase-frame="sunset" style="background-image: url('assets/city/sunset.png')"></span>
+          <span class="city-frame" data-phase-frame="nightfall" style="background-image: url('assets/city/nightfall.png')"></span>
+          <span class="city-frame" data-phase-frame="night" style="background-image: url('assets/city/night.png')"></span>
+          <span class="city-tint" data-city-tint></span>
+          <span class="city-lamps" data-city-lamps></span>
+          <span class="city-scrim" data-city-scrim></span>
+          <span class="city-fade"></span>
+        </div>
+        <nav class="nav page-nav" aria-label="Primary navigation">
+          <a class="brand" href="index.html" aria-label="Altair R. home">
+            <span class="brand-mark" aria-hidden="true"><span></span></span>
+            <span>altair r.</span>
+          </a>
+          <div class="nav-links">
+            <a href="writing.html">writing</a>
+            <a href="notes.html" aria-current="page">notes</a>
+            <a href="work.html">work</a>
+            <a href="about.html">about</a>
+            <button class="theme-toggle" type="button" aria-label="Toggle theme" data-theme-toggle>
+              <svg class="moon-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"></path>
+              </svg>
+              <svg class="sun-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="12" cy="12" r="4.2"></circle>
+                <path d="M12 2v3M12 19v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2 12h3M19 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1"></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+      </header>
+
+      <main class="content-main">
+        <header class="page-header">
+          <h1>
+            <span class="title-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M6 3h9l4 4v13a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1z"></path>
+                <path d="M14 3v5h5"></path>
+                <path d="M8 13h8M8 16.5h5"></path>
+              </svg>
+            </span>
+            Notes
+          </h1>
+          <p>Shorter, looser, not always about work. Filed together on purpose.</p>
+        </header>
+
+        <div class="tag-filter" aria-label="Filter notes by tag">
+          <button type="button" data-filter-tag="ai">ai</button>
+          <button type="button" data-filter-tag="practice">practice</button>
+          <button type="button" data-filter-tag="systems">systems</button>
+          <button type="button" data-filter-tag="misc">misc</button>
+          <button type="button" data-filter-tag="personal">personal</button>
+        </div>
+
+        <section aria-label="Notes archive">
+          <ol class="note-list archive-list">
+            <li data-note-tag="ai">
+              <a href="notes/ai-engineering-is-software-engineering-with-one-extra-api-call.html">
+                <time datetime="2026-08-24">2026.08.24</time>
+                <span>
+                  <strong>AI engineering is software engineering with one extra API call</strong>
+                  <em>The hard parts were never the model.</em>
+                </span>
+                <small>ai</small>
+              </a>
+            </li>
+            <li data-note-tag="practice">
+              <a href="#">
+                <time datetime="2026-08-11">2026.08.11</time>
+                <span>
+                  <strong>Nobody owns the boring half</strong>
+                  <em>Migrations, cleanup, the ticket nobody wants.</em>
+                </span>
+                <small>practice</small>
+              </a>
+            </li>
+            <li data-note-tag="systems">
+              <a href="#">
+                <time datetime="2026-07-29">2026.07.29</time>
+                <span>
+                  <strong>Standards that are really suggestions</strong>
+                  <em>Style guides nobody's blocked a PR on.</em>
+                </span>
+                <small>systems</small>
+              </a>
+            </li>
+            <li data-note-tag="misc">
+              <a href="#">
+                <time datetime="2026-07-15">2026.07.15</time>
+                <span>
+                  <strong>How to answer without being useless</strong>
+                  <em>On giving people something they can act on.</em>
+                </span>
+                <small>misc</small>
+              </a>
+            </li>
+            <li data-note-tag="personal">
+              <a href="#">
+                <time datetime="2026-06-30">2026.06.30</time>
+                <span>
+                  <strong>Ran out of milk, made the coffee anyway</strong>
+                  <em>Small domestic failures and what fixes them.</em>
+                </span>
+                <small>personal</small>
+              </a>
+            </li>
+            <li data-note-tag="systems">
+              <a href="#">
+                <time datetime="2026-06-09">2026.06.09</time>
+                <span>
+                  <strong>The bug was a calendar, not a bug</strong>
+                  <em>DST again. It's always DST.</em>
+                </span>
+                <small>systems</small>
+              </a>
+            </li>
+            <li data-note-tag="personal">
+              <a href="#">
+                <time datetime="2026-05-22">2026.05.22</time>
+                <span>
+                  <strong>A week off the pager</strong>
+                  <em>What I noticed about my own attention.</em>
+                </span>
+                <small>personal</small>
+              </a>
+            </li>
+            <li data-note-tag="practice">
+              <a href="#">
+                <time datetime="2026-05-03">2026.05.03</time>
+                <span>
+                  <strong>Grep before you architect</strong>
+                  <em>Most "redesigns" are a search you didn't run.</em>
+                </span>
+                <small>practice</small>
+              </a>
+            </li>
+            <li data-note-tag="ai">
+              <a href="#">
+                <time datetime="2026-04-19">2026.04.19</time>
+                <span>
+                  <strong>What LLMs are actually bad at reviewing</strong>
+                  <em>Confidence and correctness aren't the same signal.</em>
+                </span>
+                <small>ai</small>
+              </a>
+            </li>
+            <li data-note-tag="personal">
+              <a href="#">
+                <time datetime="2026-04-02">2026.04.02</time>
+                <span>
+                  <strong>Moved a plant, it lived</strong>
+                  <em>Lower the stakes on purpose sometimes.</em>
+                </span>
+                <small>personal</small>
+              </a>
+            </li>
+          </ol>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <a href="mailto:altairrostam@gmail.com">altairrostam@gmail.com</a>
+        <a href="https://github.com/altairrostam">github</a>
+        <a href="https://linkedin.com/in/altair-r">linkedin</a>
+        <a class="resume-link" href="assets/files/resume.pdf">resume.pdf</a>
+        <a href="rss.xml">rss</a>
+      </footer>
+    </div>
+    <script src="scripts/site.js" defer></script>
+  </body>
+</html>

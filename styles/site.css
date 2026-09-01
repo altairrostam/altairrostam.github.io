@@ -239,7 +239,7 @@ button:focus-visible {
   opacity: 0.72;
 }
 
-.nav-links a:first-child {
+.nav-links a[aria-current="page"] {
   opacity: 1;
   border-bottom: 1px solid currentColor;
   padding-bottom: 2px;
@@ -351,6 +351,216 @@ button:focus-visible {
   padding: 56px 0 0;
 }
 
+.page-band {
+  position: relative;
+  height: 210px;
+  overflow: hidden;
+}
+
+.city-band {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.city-band .city-frame {
+  background-position: center 46%;
+}
+
+.city-band::before,
+.city-band::after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: 1;
+  width: 10%;
+  pointer-events: none;
+  content: "";
+}
+
+.city-band::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--paper), rgba(var(--paper-rgb), 0));
+}
+
+.city-band::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--paper), rgba(var(--paper-rgb), 0));
+}
+
+.city-band .city-fade {
+  z-index: 1;
+  height: 34%;
+  background: linear-gradient(
+    180deg,
+    rgba(var(--paper-rgb), 0),
+    rgba(var(--paper-rgb), 0.75) 65%,
+    var(--paper)
+  );
+}
+
+.page-nav {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding-inline: 40px;
+}
+
+.content-main {
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 36px 40px 0;
+}
+
+.page-header h1 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 16px;
+  font-family: var(--font-serif);
+  font-size: clamp(36px, 8vw, 40px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.page-header p {
+  max-width: 32em;
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 18px;
+  line-height: 1.5;
+  opacity: 0.75;
+}
+
+.page-header a {
+  color: var(--pink);
+}
+
+.title-icon {
+  display: inline-flex;
+  width: 26px;
+  height: 26px;
+  color: var(--pink);
+  flex: 0 0 auto;
+}
+
+.title-icon svg {
+  width: 100%;
+  height: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.essay-list {
+  padding: 44px 0 0;
+}
+
+.essay-list article {
+  border-top: 1px solid var(--rule);
+}
+
+.essay-list article:last-child {
+  border-bottom: 1px solid var(--rule);
+}
+
+.essay-list a {
+  display: block;
+  padding: 24px 2px;
+}
+
+.entry-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 7px;
+}
+
+.entry-meta time {
+  color: var(--muted);
+  font-size: 10.5px;
+}
+
+.entry-meta small {
+  margin-left: auto;
+  color: var(--blue);
+  font-size: 10px;
+  letter-spacing: 0.06em;
+}
+
+.essay-list h2 {
+  margin: 0 0 6px;
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.essay-list p {
+  max-width: 34em;
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0.62;
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 36px 0 20px;
+}
+
+.tag-filter button {
+  padding: 6px 12px;
+  border: 1px solid rgba(var(--ink-rgb), 0.22);
+  border-radius: 999px;
+  color: var(--faint);
+  cursor: pointer;
+  background: transparent;
+  font-size: 11px;
+  letter-spacing: 0.04em;
+}
+
+.tag-filter button:hover {
+  color: var(--pink);
+  border-color: rgba(var(--ink-rgb), 0.34);
+}
+
+.tag-filter button.is-active {
+  color: var(--paper);
+  border-color: var(--ink);
+  background: var(--ink);
+}
+
+.archive-list strong,
+.archive-list em {
+  display: block;
+}
+
+.archive-list strong {
+  font-weight: 400;
+}
+
+.archive-list em {
+  margin-top: 3px;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-style: normal;
+  line-height: 1.45;
+  opacity: 0.55;
+}
+
+.archive-list [hidden] {
+  display: none;
+}
+
 .section-heading {
   display: flex;
   align-items: baseline;
@@ -435,13 +645,15 @@ button:focus-visible {
 
 @media (max-width: 640px) {
   .home-hero,
-  .city-stage {
+  .home-hero .city-stage {
     height: 620px;
     min-height: 620px;
   }
 
   .hero-content,
   .home-main,
+  .content-main,
+  .page-nav,
   .footer {
     padding-inline: 24px;
   }
@@ -480,6 +692,18 @@ button:focus-visible {
 
   .note-list time {
     grid-column: 1 / -1;
+  }
+
+  .page-band {
+    height: 190px;
+  }
+
+  .content-main {
+    padding-top: 32px;
+  }
+
+  .essay-list h2 {
+    font-size: 22px;
   }
 }
 
