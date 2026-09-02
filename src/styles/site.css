@@ -870,6 +870,20 @@ button:focus-visible {
   font-family: var(--font-mono);
 }
 
+.error-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding: 36px 0 70px;
+  color: var(--faint);
+  font-size: 12px;
+}
+
+.error-links a {
+  border-bottom: 1px solid rgba(var(--ink-rgb), 0.22);
+  padding-bottom: 3px;
+}
+
 .resume-sheet {
   margin: 36px 0 70px;
   padding: 42px 46px;

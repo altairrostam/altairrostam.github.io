@@ -1,7 +1,7 @@
 export const latestWriting = [
   {
     title: "AI engineering is software engineering with one extra API call",
-    href: "/notes/ai-engineering-is-software-engineering-with-one-extra-api-call.html",
+    href: "/notes/ai-engineering-is-software-engineering-with-one-extra-api-call/",
     date: "2026-08-24",
     displayDate: "2026.08.24",
     tag: "ai",
@@ -10,7 +10,7 @@ export const latestWriting = [
   },
   {
     title: "Nobody owns the boring half",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-08-11",
     displayDate: "2026.08.11",
     tag: "practice",
@@ -19,7 +19,7 @@ export const latestWriting = [
   },
   {
     title: "Standards that are really suggestions",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-07-29",
     displayDate: "2026.07.29",
     tag: "systems",
@@ -28,7 +28,7 @@ export const latestWriting = [
   },
   {
     title: "How to answer without being useless",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-07-15",
     displayDate: "2026.07.15",
     tag: "misc",
@@ -41,7 +41,7 @@ export const writingEntries = [
   ...latestWriting,
   {
     title: "The on-call rotation is a management tool",
-    href: "/writing/the-on-call-rotation-is-a-management-tool.html",
+    href: "/writing/the-on-call-rotation-is-a-management-tool/",
     date: "2026-07-02",
     displayDate: "2026.07.02",
     tag: "practice",
@@ -50,7 +50,7 @@ export const writingEntries = [
   },
   {
     title: "Ran out of milk, made the coffee anyway",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-06-30",
     displayDate: "2026.06.30",
     tag: "personal",
@@ -59,7 +59,7 @@ export const writingEntries = [
   },
   {
     title: "The bug was a calendar, not a bug",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-06-09",
     displayDate: "2026.06.09",
     tag: "systems",
@@ -68,7 +68,7 @@ export const writingEntries = [
   },
   {
     title: "A week off the pager",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-05-22",
     displayDate: "2026.05.22",
     tag: "personal",
@@ -77,7 +77,7 @@ export const writingEntries = [
   },
   {
     title: "What \"production-ready\" actually verifies",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-05-18",
     displayDate: "2026.05.18",
     tag: "systems",
@@ -86,7 +86,7 @@ export const writingEntries = [
   },
   {
     title: "Grep before you architect",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-05-03",
     displayDate: "2026.05.03",
     tag: "practice",
@@ -95,7 +95,7 @@ export const writingEntries = [
   },
   {
     title: "What LLMs are actually bad at reviewing",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-04-19",
     displayDate: "2026.04.19",
     tag: "ai",
@@ -104,7 +104,7 @@ export const writingEntries = [
   },
   {
     title: "Moved a plant, it lived",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-04-02",
     displayDate: "2026.04.02",
     tag: "personal",
@@ -113,7 +113,7 @@ export const writingEntries = [
   },
   {
     title: "Roaming: a case for generalists on senior teams",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-03-30",
     displayDate: "2026.03.30",
     tag: "career",
@@ -122,7 +122,7 @@ export const writingEntries = [
   },
   {
     title: "Postmortems nobody reads",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2026-01-14",
     displayDate: "2026.01.14",
     tag: "practice",
@@ -131,7 +131,7 @@ export const writingEntries = [
   },
   {
     title: "The interview problem is a proxy for a worse one",
-    href: "/writing.html",
+    href: "/writing/",
     date: "2025-11-02",
     displayDate: "2025.11.02",
     tag: "hiring",

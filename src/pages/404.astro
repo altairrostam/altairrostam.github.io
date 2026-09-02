@@ -1,0 +1,25 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderBand from "../components/HeaderBand.astro";
+---
+
+<Layout
+  title="404 | Altair R."
+  description="Page not found on Altair R.'s site."
+>
+  <HeaderBand />
+
+  <main class="content-main">
+    <header class="page-header">
+      <h1>404</h1>
+      <p>This page wandered off. The useful paths are still nearby.</p>
+    </header>
+
+    <nav class="error-links" aria-label="404 navigation">
+      <a href="/">home</a>
+      <a href="/writing/">writing</a>
+      <a href="/work/">work</a>
+      <a href="/about/">about</a>
+    </nav>
+  </main>
+</Layout>

@@ -1,7 +1,7 @@
 import { writingEntries } from "../data/content";
 
 const site = "https://altairrostam.github.io";
-const published = writingEntries.filter((entry) => entry.href !== "/writing.html");
+const published = writingEntries.filter((entry) => entry.href !== "/writing/");
 
 function pubDate(date: string) {
   return new Date(`${date}T00:00:00.000Z`).toUTCString();
