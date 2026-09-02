@@ -19,6 +19,7 @@ const { title, description, nested = false } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content={description}>
     <title>{title}</title>
+    <link rel="icon" href="/assets/icons/site-mark.svg" type="image/svg+xml">
     <script is:inline>
       const storedTheme = localStorage.getItem("altair-theme");
       if (storedTheme === "dark") document.documentElement.classList.add("dark");

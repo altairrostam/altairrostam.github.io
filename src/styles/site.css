@@ -231,22 +231,13 @@ button:focus-visible {
 }
 
 .brand-mark {
-  position: relative;
   width: 20px;
   height: 20px;
-  border: 1.1px solid currentColor;
-  border-radius: 50%;
+  flex: 0 0 auto;
   opacity: 0.72;
-}
-
-.brand-mark span {
-  position: absolute;
-  top: 1px;
-  right: -1px;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--pink);
+  background: currentColor;
+  mask: url("/assets/icons/site-mark.svg") center / contain no-repeat;
+  -webkit-mask: url("/assets/icons/site-mark.svg") center / contain no-repeat;
 }
 
 .nav-links {
@@ -344,14 +335,14 @@ button:focus-visible {
 
 .page-band {
   position: relative;
-  height: 190px;
-  margin-bottom: 12px;
+  height: 320px;
+  margin-bottom: 8px;
   overflow: hidden;
 }
 
 .city-band {
   position: absolute;
-  inset: -24px 0 0;
+  inset: -56px 0 0;
   overflow: hidden;
   background: var(--paper);
 }
@@ -362,7 +353,7 @@ button:focus-visible {
 }
 
 .city-band .city-frame.is-active {
-  opacity: 0.78;
+  opacity: 0.82;
 }
 
 .city-band::before,
@@ -395,7 +386,7 @@ button:focus-visible {
 
 .city-band .city-fade {
   z-index: 2;
-  height: 54%;
+  height: 48%;
   background: linear-gradient(
     180deg,
     rgba(var(--paper-rgb), 0),
@@ -446,13 +437,19 @@ button:focus-visible {
 
 .title-icon {
   display: inline-flex;
-  width: 26px;
-  height: 26px;
+  width: 36px;
+  height: 36px;
   flex: 0 0 auto;
   background: currentColor;
   color: var(--pink);
-  mask: var(--icon) center / contain no-repeat;
-  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask-image: var(--icon);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--icon);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 }
 
 .icon-quill {
@@ -469,6 +466,14 @@ button:focus-visible {
 
 .icon-grimoire {
   --icon: url("/assets/icons/grimoire.svg");
+}
+
+.icon-compass {
+  --icon: url("/assets/icons/compass.svg");
+}
+
+.icon-scroll {
+  --icon: url("/assets/icons/scroll.svg");
 }
 
 .essay-list {
@@ -763,12 +768,18 @@ button:focus-visible {
 
 .heading-icon {
   display: inline-flex;
-  width: 18px;
-  height: 18px;
+  width: 36px;
+  height: 36px;
   flex: 0 0 auto;
   background: currentColor;
-  mask: var(--icon) center / contain no-repeat;
-  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask-image: var(--icon);
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+  -webkit-mask-image: var(--icon);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
 }
 
 .project-list {
@@ -1153,12 +1164,12 @@ button:focus-visible {
   }
 
   .page-band {
-    height: 146px;
-    margin-bottom: 10px;
+    height: 230px;
+    margin-bottom: 8px;
   }
 
   .city-band {
-    inset: -18px 0 0;
+    inset: -36px 0 0;
   }
 
   .city-band .city-frame {

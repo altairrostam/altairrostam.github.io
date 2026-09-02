@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <style>
+    .ink { fill: #2e3138; }
+    .accent { fill: #a63a50; }
+    @media (prefers-color-scheme: dark) {
+      .ink { fill: #ece5d6; }
+      .accent { fill: #d97690; }
+    }
+  </style>
+  <path class="ink" d="M14 56V28c0-10 8-18 18-18s18 8 18 18v28h-8V28c0-5.5-4.5-10-10-10S22 22.5 22 28v28h-8Z"/>
+  <path class="ink" d="M22 56V34h20v22H22Zm6-6h8V40h-8v10Z"/>
+  <path class="accent" d="m32 22 3.2 7.8L43 33l-7.8 3.2L32 44l-3.2-7.8L21 33l7.8-3.2L32 22Zm0 8.7-.9 2.3.9 2.3.9-2.3-.9-2.3Z"/>
+</svg>
