@@ -453,7 +453,7 @@ button:focus-visible {
 }
 
 .icon-quill {
-  --icon: url("/assets/icons/quill.svg");
+  --icon: url("/assets/icons/quill-mark.svg");
 }
 
 .icon-fortress {
