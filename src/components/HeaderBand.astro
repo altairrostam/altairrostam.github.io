@@ -1,0 +1,19 @@
+---
+import Nav from "./Nav.astro";
+
+interface Props {
+  active?: "writing" | "work" | "resume" | "about";
+}
+
+const { active } = Astro.props;
+---
+
+<header class="page-band">
+  <div class="city-band" aria-hidden="true">
+    <span class="city-frame is-active" style="background-image: url('/assets/city/golden.png')"></span>
+    <span class="city-tint"></span>
+    <span class="city-scrim"></span>
+    <span class="city-fade"></span>
+  </div>
+  <Nav active={active} />
+</header>

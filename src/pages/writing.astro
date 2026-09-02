@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderBand from "../components/HeaderBand.astro";
+import PageTitle from "../components/PageTitle.astro";
+import { writingEntries } from "../data/content";
+
+const tags = ["ai", "practice", "systems", "misc", "career", "hiring", "personal"];
+---
+
+<Layout
+  title="Writing | Altair R."
+  description="Essays and notes by Altair R. on engineering practice, systems, AI, career, and the small observations that stick."
+>
+  <HeaderBand active="writing" />
+
+  <main class="content-main">
+    <header class="page-header">
+      <PageTitle title="Writing" icon="quill" />
+      <p>Essays, notes, and working observations in one stream. Some are argued out fully; some are just useful enough to keep.</p>
+    </header>
+
+    <div class="tag-filter" aria-label="Filter writing by tag">
+      {tags.map((tag) => <button type="button" data-filter-tag={tag}>{tag}</button>)}
+    </div>
+
+    <section aria-label="Writing archive">
+      <ol class="note-list archive-list">
+        {writingEntries.map((entry) => (
+          <li data-note-tag={entry.tag}>
+            <a href={entry.href}>
+              <time datetime={entry.date}>{entry.displayDate}</time>
+              <span>
+                <strong>{entry.title}</strong>
+                <em>{entry.summary}</em>
+              </span>
+              <small>{entry.type} / {entry.tag}</small>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </main>
+</Layout>

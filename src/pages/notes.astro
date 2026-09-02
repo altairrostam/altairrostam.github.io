@@ -1,0 +1,24 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderBand from "../components/HeaderBand.astro";
+import PageTitle from "../components/PageTitle.astro";
+---
+
+<Layout
+  title="Notes moved to Writing | Altair R."
+  description="Notes by Altair R. now live in the combined Writing archive."
+>
+  <Fragment slot="head">
+    <meta http-equiv="refresh" content="0; url=/writing.html">
+    <link rel="canonical" href="/writing.html">
+  </Fragment>
+
+  <HeaderBand active="writing" />
+
+  <main class="content-main">
+    <header class="page-header">
+      <PageTitle title="Notes moved" icon="quill" />
+      <p>Notes now live inside the main <a href="/writing.html">Writing archive</a>, mixed with longer essays in one chronological stream.</p>
+    </header>
+  </main>
+</Layout>

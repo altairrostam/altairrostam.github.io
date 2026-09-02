@@ -1,0 +1,48 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import { latestWriting } from "../data/content";
+---
+
+<Layout
+  title="Altair R."
+  description="Altair R. is a software engineer who works on the parts of systems that are actually broken."
+>
+  <section class="home-hero" aria-labelledby="home-title">
+    <div class="city-stage" aria-hidden="true">
+      <span class="city-frame is-active" style="background-image: url('/assets/city/golden.png')"></span>
+      <span class="city-tint"></span>
+      <span class="city-scrim"></span>
+      <span class="city-fade"></span>
+    </div>
+
+    <div class="hero-content">
+      <Nav home />
+
+      <header class="hero-copy">
+        <h1 id="home-title">Altair R.</h1>
+        <p>Software engineer, roamer by role - I work on whatever is actually broken.</p>
+      </header>
+    </div>
+  </section>
+
+  <main class="home-main">
+    <section class="latest-notes" aria-labelledby="latest-notes-title">
+      <div class="section-heading">
+        <h2 id="latest-notes-title">Latest Writing</h2>
+        <a href="/writing.html">all writing -&gt;</a>
+      </div>
+      <ol class="note-list">
+        {latestWriting.map((entry) => (
+          <li>
+            <a href={entry.href}>
+              <time datetime={entry.date}>{entry.displayDate}</time>
+              <span>{entry.title}</span>
+              <small>{entry.tag}</small>
+            </a>
+          </li>
+        ))}
+      </ol>
+    </section>
+  </main>
+</Layout>

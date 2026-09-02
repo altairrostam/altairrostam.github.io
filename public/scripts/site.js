@@ -1,5 +1,7 @@
 function initThemeToggle() {
   document.querySelectorAll("[data-theme-toggle]").forEach((toggle) => {
+    if (toggle.dataset.ready === "true") return;
+    toggle.dataset.ready = "true";
     toggle.addEventListener("click", () => {
       const dark = !document.documentElement.classList.contains("dark");
       document.documentElement.classList.toggle("dark", dark);
@@ -27,6 +29,8 @@ function initNoteFilters() {
   }
 
   controls.forEach((control) => {
+    if (control.dataset.ready === "true") return;
+    control.dataset.ready = "true";
     control.setAttribute("aria-pressed", "false");
     control.addEventListener("click", () => {
       active = active === control.dataset.filterTag ? null : control.dataset.filterTag;
@@ -35,5 +39,10 @@ function initNoteFilters() {
   });
 }
 
-initThemeToggle();
-initNoteFilters();
+function initPage() {
+  initThemeToggle();
+  initNoteFilters();
+}
+
+document.addEventListener("astro:page-load", initPage);
+initPage();

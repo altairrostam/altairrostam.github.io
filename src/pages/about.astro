@@ -1,0 +1,28 @@
+---
+import Layout from "../layouts/Layout.astro";
+import HeaderBand from "../components/HeaderBand.astro";
+---
+
+<Layout
+  title="About | Altair R."
+  description="About Altair R., a software engineer who works across backend, infra, reliability, and the awkward edges between systems."
+>
+  <HeaderBand active="about" />
+
+  <main class="content-main">
+    <header class="page-header">
+      <h1>About</h1>
+    </header>
+
+    <section class="about-body">
+      <p>Fourteen years writing software, most of it spent on the parts of a system nobody wanted to claim: the migration, the retry logic, the pager. I've been backend, infra, and once for a bad quarter, half of a frontend team - not because I'm hard to place, but because whatever was on fire needed someone who had already fixed something like it. I grew up moving between four cities and never fully lost the habit; I still do not buy furniture I would mind leaving behind. I run, badly, in the mornings before the pager has a chance to weigh in on my day, and I read more nonfiction than I finish. Currently a staff engineer, still on the pager, still not sure that is a title and not a description of a personality flaw.</p>
+      <figure class="portrait">
+        <img src="/assets/images/portrait.jpg" alt="Altair R.">
+      </figure>
+    </section>
+    <section class="about-contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contact</h2>
+      <p><code>altairrostam [at] gmail [dot] com</code></p>
+    </section>
+  </main>
+</Layout>

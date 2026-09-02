@@ -1,0 +1,70 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import HeaderBand from "../../components/HeaderBand.astro";
+
+const measurementAside = `# what gets measured
+pages_per_week
+mttr
+
+# what does not
+why_this_service
+pages_more_than
+the_others`;
+---
+
+<Layout
+  title="The on-call rotation is a management tool | Altair R."
+  description="An essay by Altair R. on what on-call rotations reveal about engineering management and reliability priorities."
+  nested
+>
+  <HeaderBand active="writing" />
+
+  <main class="article-main">
+    <a class="back-link" href="/writing.html">&lt;- writing</a>
+    <header class="article-header">
+      <div class="entry-meta">
+        <time datetime="2026-07-02">2026.07.02</time>
+        <small>practice</small>
+      </div>
+      <h1>The on-call rotation is a management tool</h1>
+      <p>It gets sold as an engineering hygiene problem. It is also a proxy for whether anyone above you understands the system.</p>
+    </header>
+
+    <article class="article-body">
+      <section class="article-block">
+        <p>Every team eventually writes the on-call doc. It has a rotation schedule, an escalation path, a runbook link that is three months stale, and a line about psychological safety someone added after a bad week. Read enough of these and you stop seeing a process. You start seeing an admission.</p>
+      </section>
+
+      <section class="article-block">
+        <p>The admission is this: nobody with the authority to fix the underlying thing has fixed it, so the fix has been delegated downward, after midnight, to whoever drew the assignment this week.</p>
+        <aside class="article-aside">
+          <b>1</b>
+          Not always malicious. Sometimes the durable fix costs a quarter, while the pager barely appears on the org chart.
+        </aside>
+      </section>
+
+      <section class="article-block">
+        <h2>What the rotation actually measures</h2>
+        <p>A healthy on-call rotation is quiet. Not because the engineers are heroic, but because the system does not generate urgent problems often enough to need heroism. A loud rotation is not a training gap. It is a backlog with a pulse, and that pulse is a person's sleep schedule.</p>
+      </section>
+
+      <section class="article-block">
+        <p>You can tell how a company's management actually feels about reliability by whether pager volume ever makes it into a headcount conversation, or whether it just makes it into a channel called incidents that everyone learns to mute.</p>
+      </section>
+
+      <section class="article-block">
+        <p>This is why "we need better on-call tooling" is usually the wrong ask. Tooling makes the page easier to acknowledge. It does not make the page stop arriving. The instinct to soften the symptom, rather than address the source, is the same instinct that optimizes a handoff while leaving the broken workflow intact.</p>
+        <aside class="article-aside code-aside">{measurementAside}</aside>
+      </section>
+
+      <section class="article-block">
+        <h2>The actual lever</h2>
+        <p>If you want the rotation to get quiet, put the person who owns the roadmap on it. Not symbolically: actually pageable, actually accountable, actually close enough to the pain to decide that reliability work is not a favor engineers do for the org.</p>
+      </section>
+
+      <section class="article-block">
+        <p>Everything else, the runbooks, escalation charts, and retro templates, is bookkeeping for a decision that was never really about process. It was about who has to be awake when the thing breaks, and whether that fact is allowed to reach anyone who could change it.</p>
+      </section>
+    </article>
+  </main>
+</Layout>
