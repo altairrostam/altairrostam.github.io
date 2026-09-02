@@ -31,9 +31,9 @@ export function GET() {
   return new Response(`<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Altair R.</title>
+    <title>Altair R - Software Engineer</title>
     <link>${site}/</link>
-    <description>Writing and notes from Altair R. on software, systems, and engineering practice.</description>
+    <description>Writing and notes from Altair R on software, systems, and engineering practice.</description>
     <language>en-us</language>
     <lastBuildDate>${pubDate(latest.date)}</lastBuildDate>
     <atom:link href="${site}/rss.xml" rel="self" type="application/rss+xml" />
