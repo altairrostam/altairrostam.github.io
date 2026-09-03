@@ -1237,10 +1237,39 @@ button:focus-visible {
 .resume-company {
   margin: 0;
   font-family: var(--font-serif);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.25;
   color: var(--ink);
+}
+
+.resume-company-desc {
+  margin: 3px 0 6px;
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-style: italic;
+  line-height: 1.45;
+  color: var(--faint);
+}
+
+.resume-role-line {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.resume-role-line strong {
+  font-family: var(--font-serif);
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.resume-role-sep {
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .resume-dates {
@@ -1248,29 +1277,36 @@ button:focus-visible {
   font-size: 11px;
   color: var(--faint);
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
-.resume-item-secondary {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin-top: 3px;
-}
-
-.resume-role-title {
+.resume-role-subnote {
+  margin: 2px 0 0;
   font-family: var(--font-serif);
-  font-size: 14.5px;
+  font-size: 12.5px;
   font-style: italic;
+  color: var(--muted);
+}
+
+.resume-item-body {
+  margin-top: 8px;
+  display: grid;
+  gap: 8px;
+}
+
+.resume-item-body p {
+  margin: 0;
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  line-height: 1.6;
   color: rgba(var(--ink-rgb), 0.88);
 }
 
-.resume-role-note {
-  font-family: var(--font-mono);
-  font-size: 10.5px;
-  color: var(--muted);
+.resume-stack-lead {
+  margin: 0 0 10px;
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(var(--ink-rgb), 0.84);
 }
 
 .resume-item ul {
