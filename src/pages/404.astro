@@ -4,9 +4,23 @@ import HeaderBand from "../components/HeaderBand.astro";
 ---
 
 <Layout
-  title="404 | Altair R - Software Engineer"
-  description="Page not found on Altair R.'s site."
+  title="404: Page Not Found — Altair R."
+  description="The requested page could not be found."
+  noindex={true}
 >
+  <Fragment slot="head">
+    <script is:inline>
+      (function() {
+        var path = window.location.pathname;
+        if (path === '/projects' || path === '/projects/' || path === '/projects.html') {
+          window.location.replace('/work/');
+        } else if (path.endsWith('.html')) {
+          var clean = path.replace(/\.html$/, '/');
+          window.location.replace(clean);
+        }
+      })();
+    </script>
+  </Fragment>
   <HeaderBand />
 
   <main class="content-main">

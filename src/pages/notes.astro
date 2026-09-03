@@ -5,12 +5,13 @@ import PageTitle from "../components/PageTitle.astro";
 ---
 
 <Layout
-  title="Notes moved to Writing | Altair R - Software Engineer"
-  description="Notes by Altair R. now live in the combined Writing archive."
+  title="Notes moved to Writing — Altair R."
+  description="Notes by Altair R. have been consolidated into the Writing archive."
+  canonical="https://altairrostam.github.io/writing/"
+  noindex={true}
 >
   <Fragment slot="head">
     <meta http-equiv="refresh" content="0; url=/writing/">
-    <link rel="canonical" href="/writing/">
   </Fragment>
 
   <HeaderBand active="writing" />
