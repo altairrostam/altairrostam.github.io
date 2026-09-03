@@ -1,95 +1,118 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderBand from "../components/HeaderBand.astro";
+
+const stack = [
+  "Python", "TypeScript", "JavaScript", "React", "Next.js", "Vue.js",
+  "FastAPI", "Django", "PostgreSQL", "MongoDB", "Redis", "Kafka",
+  "Elasticsearch", "AWS", "Terraform", "Docker", "CI/CD",
+  "Browser Automation", "Web Crawling", "PyTorch", "TensorFlow",
+  "Computer Vision", "LLM Systems"
+];
 ---
 
-<Layout title="Resume | Altair R - Software Engineer" description="Resume for Altair R., software engineer.">
+<Layout title="Resume | Altair R - Software Engineer" description="Resume for Altair R., Senior Software Engineer.">
   <HeaderBand active="resume" />
 
   <main class="content-main">
-    <a class="back-link" href="/assets/files/resume.pdf">download pdf</a>
+    <a class="back-link" href="/assets/files/Resume-Senior%20Software%20Engineer-Altair%20R.pdf" download="Resume-Senior Software Engineer-Altair R.pdf">download pdf</a>
+
     <section class="resume-sheet" aria-label="Resume">
       <header class="resume-top">
-        <div>
+        <div class="resume-top-content">
           <h1>Altair R.</h1>
-          <p>Software engineer, roamer by role - I work on whatever is actually broken.</p>
-        </div>
-        <div class="resume-contact">
-          <div>altairrostam@gmail.com</div>
-          <div>github.com/altairrostam</div>
-          <div>linkedin.com/in/altair-r</div>
+          <p class="resume-role">Senior Software Engineer</p>
+          <p class="resume-tagline">Full-Stack &amp; Backend Systems &middot; AI/ML &middot; Cloud Infrastructure &middot; Browser Automation</p>
+          <p class="resume-bio">I build production systems across frontend, backend, data, automation, AI, and infrastructure. Currently Head of Engineering at UNIVERSA AI, where I progressed from Senior AI Engineer while remaining hands-on.</p>
         </div>
       </header>
 
       <section class="resume-block">
         <h2>Experience</h2>
+
         <article class="resume-item">
-          <h3>Staff Engineer <span>Ferrovia</span> <time>2024 - now</time></h3>
+          <header class="resume-item-header">
+            <div class="resume-item-primary">
+              <h3 class="resume-company">UNIVERSA AI</h3>
+              <span class="resume-dates">2024 &ndash; Present</span>
+            </div>
+            <div class="resume-item-secondary">
+              <span class="resume-role-title">Head of Engineering</span>
+              <span class="resume-role-note">Previously Senior AI Engineer</span>
+            </div>
+          </header>
           <ul>
-            <li>Joined to fix one payments reconciliation job; ended up owning the three systems it touched.</li>
-            <li>Reduced incident volume on the settlement pipeline by rebuilding its retry semantics, not by adding more alerting.</li>
+            <li>Built an automation platform that processed <strong>~250,000 records into ~4,500 qualified leads</strong>, reducing manual analysis by ~75%.</li>
+            <li>Built full-stack products spanning frontend applications, backend APIs, data workflows, reporting, monitoring, payments, and production infrastructure.</li>
+            <li>Developed persistent, proxy-backed browser automation for authenticated workflows, including human-like interaction and computer-vision-assisted CAPTCHA recognition.</li>
+            <li>Co-built an internal AI agent framework using state-machine orchestration to coordinate parallel LLM-driven workflows with real-time execution visibility.</li>
+            <li>Translate loosely defined business and research objectives into workflows, technical architecture, implementation plans, and production systems across engineering, AI, and infrastructure.</li>
           </ul>
         </article>
+
         <article class="resume-item">
-          <h3>Senior Engineer <span>Loom &amp; Wire</span> <time>2021 - 2024</time></h3>
+          <header class="resume-item-header">
+            <div class="resume-item-primary">
+              <h3 class="resume-company">Aria Health / Dcentric Health Ltd</h3>
+              <span class="resume-dates">2023 &ndash; 2024</span>
+            </div>
+            <div class="resume-item-secondary">
+              <span class="resume-role-title">Senior Full-Stack Software Engineer</span>
+              <span class="resume-role-note">Engineer #3 on founding team</span>
+            </div>
+          </header>
           <ul>
-            <li>Rewrote the inventory sync service after the third time it silently double-counted stock.</li>
-            <li>Ran the migration off the vendor search index nobody else wanted to touch.</li>
+            <li>Built clinical software combining patient FHIR profiles with pharmaceutical data to identify potential medication contraindications.</li>
+            <li>Developed backend services, data pipelines, authentication, caching, search, and asynchronous processing.</li>
+            <li>Built <strong>50+ reusable React components</strong> and established a shared frontend component foundation.</li>
+            <li>Worked across clinical, product, and data teams as engineering grew from 3 to 6.</li>
           </ul>
         </article>
+
         <article class="resume-item">
-          <h3>Software Engineer <span>Basin Health</span> <time>2018 - 2021</time></h3>
+          <header class="resume-item-header">
+            <div class="resume-item-primary">
+              <h3 class="resume-company">Cheeri / Divao LLC</h3>
+              <span class="resume-dates">2022</span>
+            </div>
+            <div class="resume-item-secondary">
+              <span class="resume-role-title">Software Engineer</span>
+            </div>
+          </header>
           <ul>
-            <li>Built the clinic scheduling backend from a spreadsheet and a promise.</li>
-            <li>Spent a year on HIPAA-adjacent plumbing nobody else wanted to own.</li>
+            <li>Built Google Drive file-management workflows and reusable Vue.js frontend components.</li>
           </ul>
         </article>
+
         <article class="resume-item">
-          <h3>Software Engineer <span>Kettlebell Labs</span> <time>2015 - 2018</time></h3>
+          <header class="resume-item-header">
+            <div class="resume-item-primary">
+              <h3 class="resume-company">ITS Research Lab</h3>
+              <span class="resume-dates">2019 &ndash; 2022</span>
+            </div>
+            <div class="resume-item-secondary">
+              <span class="resume-role-title">AI / Full-Stack Software Engineer</span>
+            </div>
+          </header>
           <ul>
-            <li>First real engineering job; shipped the checkout flow that's still in production.</li>
-            <li>Learned what "done" means from an on-call rotation of one.</li>
+            <li>Built and deployed three healthcare AI systems spanning brain MRI, lung imaging, and dermatology.</li>
+            <li>Developed full-stack applications, backend APIs, AI inference pipelines, and cloud infrastructure from requirements through hospital deployment.</li>
+            <li>Processed <strong>10,000+ medical-imaging records</strong> and built DICOM/NIfTI ingestion, PACS integration, and medical-image viewing infrastructure.</li>
+            <li>Worked with researchers, clinicians, and hospitals to translate domain requirements into production software.</li>
           </ul>
         </article>
       </section>
 
-      <div class="resume-grid">
-        <section class="resume-block">
-          <h2>Projects</h2>
-          <article class="resume-item">
-            <h3>runbook <small>go</small></h3>
-            <p>Static-site generator for on-call docs; fails the build on a stale link.</p>
-          </article>
-          <article class="resume-item">
-            <h3>quietpager <small>typescript</small></h3>
-            <p>Pager-duty analytics surfacing which services are actually loud.</p>
-          </article>
-          <article class="resume-item">
-            <h3>backfill <small>rust</small></h3>
-            <p>CLI for replaying production traffic against staging without melting it.</p>
-          </article>
-        </section>
-
-        <section class="resume-block">
-          <h2>Open Source</h2>
-          <article class="resume-item">
-            <h3>postgres-lag-exporter <small>maintainer</small></h3>
-            <p>Small metrics exporter for replication lag.</p>
-          </article>
-          <article class="resume-item">
-            <h3>sidekiq <small>contributor</small></h3>
-            <p>A few merged fixes around dead job retries.</p>
-          </article>
-          <article class="resume-item">
-            <h3>httpx <small>contributor</small></h3>
-            <p>Fixed a timeout edge case that took longer to reproduce than to fix.</p>
-          </article>
-        </section>
-      </div>
+      <section class="resume-block">
+        <h2>Stack</h2>
+        <p class="resume-skills-cloud">
+          {stack.join(" · ")}
+        </p>
+      </section>
 
       <footer class="resume-note">
-        <span>Full history and writing at the site this resume links from.</span>
-        <span>Updated 2026.08</span>
+        <span>Detailed history and full portfolio available in the downloadable PDF above.</span>
+        <span>Updated 2026.09</span>
       </footer>
     </section>
   </main>
