@@ -23,6 +23,49 @@ import {
       <p class="work-sublead">Production software across full-stack engineering, healthcare AI, e-commerce, and open source.</p>
     </header>
 
+    <section class="work-section" aria-labelledby="open-source-title">
+      <h2 class="mini-heading" id="open-source-title">
+        <span class="heading-icon icon-grimoire" aria-hidden="true"></span>
+        Open Source
+      </h2>
+
+      <div class="work-cards-list">
+        {openSourceContributions.map((contrib) => (
+          <article class="work-card">
+            <header class="work-card-header">
+              <h3 class="work-card-title">{contrib.name}</h3>
+              <div class="work-card-meta">
+                <span>{contrib.category}</span>
+                {contrib.metric && <span class="work-meta-sep">·</span><span>{contrib.metric}</span>}
+              </div>
+            </header>
+
+            <div class="work-card-desc">
+              {contrib.description.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            <footer class="work-card-footer">
+              <div class="work-card-stack" aria-label="Technologies used">
+                {contrib.stack.map((tech) => (
+                  <span>{tech}</span>
+                ))}
+              </div>
+              <a
+                class="work-card-cta"
+                href={contrib.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {contrib.ctaText} <span aria-hidden="true">&nearr;</span>
+              </a>
+            </footer>
+          </article>
+        ))}
+      </div>
+    </section>
+
     <section class="work-section" aria-labelledby="selected-work-title">
       <h2 class="mini-heading" id="selected-work-title">
         <span class="heading-icon icon-anvil" aria-hidden="true"></span>
@@ -108,49 +151,6 @@ import {
             ))}
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="work-section" aria-labelledby="open-source-title">
-      <h2 class="mini-heading" id="open-source-title">
-        <span class="heading-icon icon-grimoire" aria-hidden="true"></span>
-        Open Source
-      </h2>
-
-      <div class="work-cards-list">
-        {openSourceContributions.map((contrib) => (
-          <article class="work-card">
-            <header class="work-card-header">
-              <h3 class="work-card-title">{contrib.name}</h3>
-              <div class="work-card-meta">
-                <span>{contrib.category}</span>
-                {contrib.metric && <span class="work-meta-sep">·</span><span>{contrib.metric}</span>}
-              </div>
-            </header>
-
-            <div class="work-card-desc">
-              {contrib.description.map((paragraph) => (
-                <p>{paragraph}</p>
-              ))}
-            </div>
-
-            <footer class="work-card-footer">
-              <div class="work-card-stack" aria-label="Technologies used">
-                {contrib.stack.map((tech) => (
-                  <span>{tech}</span>
-                ))}
-              </div>
-              <a
-                class="work-card-cta"
-                href={contrib.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {contrib.ctaText} <span aria-hidden="true">&nearr;</span>
-              </a>
-            </footer>
-          </article>
-        ))}
       </div>
     </section>
   </main>

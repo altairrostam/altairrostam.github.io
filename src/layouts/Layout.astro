@@ -40,6 +40,9 @@ const ogImageUrl = new URL(image, siteUrl).href;
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>{title}</title>
     <meta name="description" content={description}>
+    <meta name="author" content="Altair R.">
+    <meta name="theme-color" content="#f3e9dc" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1d1a16" media="(prefers-color-scheme: dark)">
     <link rel="canonical" href={canonicalUrl}>
     {noindex ? (
       <meta name="robots" content="noindex, nofollow">
@@ -47,6 +50,29 @@ const ogImageUrl = new URL(image, siteUrl).href;
       <meta name="robots" content="index, follow">
     )}
     <link rel="icon" href="/assets/icons/site-mark.svg" type="image/svg+xml">
+    <link rel="alternate" type="application/rss+xml" title="Altair R. — Writing" href={`${siteUrl}/rss.xml`}>
+
+    <!-- Preload Critical Above-The-Fold Assets for Instant FCP -->
+    <link rel="preload" as="image" href="/assets/city/golden.webp" type="image/webp" fetchpriority="high">
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Asynchronous Non-Blocking Google Fonts with Instant Fallback -->
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap"
+      onload="this.onload=null;this.rel='stylesheet'"
+    >
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap"
+      >
+    </noscript>
+
     <script is:inline>
       function applyTheme() {
         const stored = localStorage.getItem("altair-theme");
@@ -57,13 +83,10 @@ const ogImageUrl = new URL(image, siteUrl).href;
       applyTheme();
       document.addEventListener("astro:after-swap", applyTheme);
     </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:opsz,wght@6..72,300;6..72,400;6..72,500&display=swap"
-      rel="stylesheet"
-    >
-    <!-- OpenGraph / LinkedIn / Social Preview -->
+
+    <!-- OpenGraph / Social Preview -->
+    <meta property="og:site_name" content="Altair R.">
+    <meta property="og:locale" content="en_US">
     <meta property="og:type" content="website">
     <meta property="og:url" content={canonicalUrl}>
     <meta property="og:title" content={ogTitle}>
@@ -71,25 +94,71 @@ const ogImageUrl = new URL(image, siteUrl).href;
     <meta property="og:image" content={ogImageUrl}>
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content={ogTitle}>
 
-    <!-- Twitter -->
+    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content={canonicalUrl}>
     <meta name="twitter:title" content={ogTitle}>
     <meta name="twitter:description" content={ogDescription}>
     <meta name="twitter:image" content={ogImageUrl}>
+    <meta name="twitter:image:alt" content={ogTitle}>
 
-    <!-- Structured Data (JSON-LD) -->
+    <!-- Structured Data (JSON-LD Entity Graph) -->
     <script type="application/ld+json" set:html={JSON.stringify({
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Altair R.",
-      "alternateName": "Altair Rostam",
-      "url": "https://altairrostam.github.io/",
-      "jobTitle": "Senior Software Engineer",
-      "sameAs": [
-        "https://github.com/altairrostam",
-        "https://linkedin.com/in/altair-r"
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": `${siteUrl}/#person`,
+          "name": "Altair R.",
+          "alternateName": "Altair Rostam",
+          "url": `${siteUrl}/`,
+          "image": `${siteUrl}/assets/images/portrait.webp`,
+          "jobTitle": "Senior Software Engineer",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "UNIVERSA AI"
+          },
+          "description": "Senior software engineer building full-stack systems, backend services, AI/ML applications, and cloud infrastructure.",
+          "knowsAbout": [
+            "Full-Stack Engineering",
+            "Distributed Systems",
+            "Backend Architecture",
+            "Artificial Intelligence",
+            "Machine Learning",
+            "Healthcare AI Systems",
+            "Cloud Infrastructure",
+            "Browser Automation"
+          ],
+          "sameAs": [
+            "https://github.com/altairrostam",
+            "https://linkedin.com/in/altair-r"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": `${siteUrl}/#website`,
+          "url": `${siteUrl}/`,
+          "name": "Altair R.",
+          "description": "Engineering portfolio, production systems, and writing by Altair R.",
+          "publisher": {
+            "@id": `${siteUrl}/#person`
+          }
+        },
+        {
+          "@type": "WebPage",
+          "@id": canonicalUrl,
+          "url": canonicalUrl,
+          "name": ogTitle,
+          "description": ogDescription,
+          "isPartOf": {
+            "@id": `${siteUrl}/#website`
+          },
+          "about": {
+            "@id": `${siteUrl}/#person`
+          }
+        }
       ]
     })} />
 

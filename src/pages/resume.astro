@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import HeaderBand from "../components/HeaderBand.astro";
+import PageTitle from "../components/PageTitle.astro";
 
 const stack = [
   "Python", "TypeScript", "JavaScript", "React", "Next.js", "Vue.js",
@@ -19,7 +20,24 @@ const stack = [
   <HeaderBand active="resume" />
 
   <main class="content-main">
-    <a class="back-link" href="/assets/files/Resume-Senior%20Software%20Engineer-Altair%20R.pdf" download="Resume-Senior Software Engineer-Altair R.pdf">download pdf</a>
+    <header class="page-header resume-header">
+      <div class="resume-title-bar">
+        <PageTitle title="Resume" icon="fortress" />
+        <a
+          class="resume-download-btn"
+          href="/assets/files/Resume-Senior%20Software%20Engineer-Altair%20R.pdf"
+          download="Resume-Senior Software Engineer-Altair R.pdf"
+          aria-label="Download Resume as PDF"
+        >
+          <svg class="download-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download PDF</span>
+        </a>
+      </div>
+    </header>
 
     <section class="resume-sheet" aria-label="Resume">
       <header class="resume-top">
@@ -115,7 +133,7 @@ const stack = [
       </section>
 
       <footer class="resume-note">
-        <span>Detailed history and full portfolio available in the downloadable PDF above.</span>
+        <span>Detailed history and full portfolio available in the <a class="resume-note-download" href="/assets/files/Resume-Senior%20Software%20Engineer-Altair%20R.pdf" download="Resume-Senior Software Engineer-Altair R.pdf">downloadable PDF</a>.</span>
         <span>Updated 2026.09</span>
       </footer>
     </section>
