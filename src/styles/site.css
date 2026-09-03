@@ -32,7 +32,7 @@
   --muted: rgba(var(--ink-rgb), 0.45);
   --scrollbar-thumb: #d97690;
   --scrollbar-thumb-hover: #8fb3d6;
-  --hero-ink: #2e3138;
+  --hero-ink: #ece5d6;
   color-scheme: dark;
 }
 
@@ -188,9 +188,9 @@ button:focus-visible {
 .city-scrim {
   background: linear-gradient(
     180deg,
-    rgba(243, 233, 220, 0.84),
-    rgba(243, 233, 220, 0.34) 38%,
-    rgba(243, 233, 220, 0) 66%
+    rgba(var(--paper-rgb), 0.84),
+    rgba(var(--paper-rgb), 0.34) 38%,
+    rgba(var(--paper-rgb), 0) 66%
   );
 }
 
@@ -246,11 +246,11 @@ button:focus-visible {
 
 .site-header:not(.is-scrolled) .nav {
   color: var(--hero-ink);
-  text-shadow: 0 1px 14px rgba(243, 233, 220, 0.85);
+  text-shadow: 0 1px 14px rgba(var(--paper-rgb), 0.85);
 }
 
 .site-header:not(.is-scrolled) .theme-toggle {
-  border-color: rgba(46, 49, 56, 0.4);
+  border-color: rgba(var(--ink-rgb), 0.35);
 }
 
 .nav {
@@ -387,7 +387,7 @@ button:focus-visible {
 
 .page-band {
   position: relative;
-  height: 290px;
+  height: 380px;
   margin: 0 0 8px;
   overflow: hidden;
 }
@@ -400,7 +400,7 @@ button:focus-visible {
 }
 
 .city-band .city-frame {
-  background-position: center 46%;
+  background-position: center 44%;
   background-size: cover;
 }
 
@@ -432,17 +432,22 @@ button:focus-visible {
 .city-band .city-scrim {
   z-index: 1;
   background:
-    linear-gradient(180deg, rgba(var(--paper-rgb), 0), rgba(var(--paper-rgb), 0.08) 38%, var(--paper) 100%),
+    linear-gradient(
+      180deg,
+      rgba(var(--paper-rgb), 0.84),
+      rgba(var(--paper-rgb), 0.34) 38%,
+      rgba(var(--paper-rgb), 0) 66%
+    ),
     linear-gradient(90deg, var(--paper), rgba(var(--paper-rgb), 0) 20%, rgba(var(--paper-rgb), 0) 80%, var(--paper));
 }
 
 .city-band .city-fade {
   z-index: 2;
-  height: 48%;
+  height: 190px;
   background: linear-gradient(
     180deg,
     rgba(var(--paper-rgb), 0),
-    rgba(var(--paper-rgb), 0.82) 60%,
+    rgba(var(--paper-rgb), 0.55) 55%,
     var(--paper)
   );
 }
@@ -1637,7 +1642,7 @@ button:focus-visible {
   }
 
   .page-band {
-    height: 230px;
+    height: 280px;
     margin-bottom: 8px;
   }
 
