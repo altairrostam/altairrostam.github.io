@@ -8,6 +8,10 @@ import { latestWriting } from "../data/content";
   title="Altair R - Software Engineer"
   description="Altair R. is a software engineer who works on the parts of systems that are actually broken."
 >
+  <header class="site-header is-home-header" id="site-header">
+    <Nav home />
+  </header>
+
   <section class="home-hero" aria-labelledby="home-title">
     <div class="city-stage" aria-hidden="true">
       <span class="city-frame is-active" style="background-image: url('/assets/city/golden.png')"></span>
@@ -17,8 +21,6 @@ import { latestWriting } from "../data/content";
     </div>
 
     <div class="hero-content">
-      <Nav home />
-
       <header class="hero-copy">
         <h1 id="home-title">Altair R.</h1>
         <p>Software engineer, roamer by role - I work on whatever is actually broken.</p>
@@ -30,19 +32,25 @@ import { latestWriting } from "../data/content";
     <section class="latest-notes" aria-labelledby="latest-notes-title">
       <div class="section-heading">
         <h2 id="latest-notes-title">Latest Writing</h2>
-        <a href="/writing/">all writing -&gt;</a>
+        <a href="/work/">view my work -&gt;</a>
       </div>
-      <ol class="note-list">
-        {latestWriting.map((entry) => (
-          <li>
-            <a href={entry.href}>
-              <time datetime={entry.date}>{entry.displayDate}</time>
-              <span>{entry.title}</span>
-              <small>{entry.tag}</small>
-            </a>
-          </li>
-        ))}
-      </ol>
+      {latestWriting.length > 0 ? (
+        <ol class="note-list">
+          {latestWriting.map((entry) => (
+            <li>
+              <a href={entry.href}>
+                <time datetime={entry.date}>{entry.displayDate}</time>
+                <span>{entry.title}</span>
+                <small>{entry.tag}</small>
+              </a>
+            </li>
+          ))}
+        </ol>
+      ) : null}
+      <div class="writing-coming-soon">
+        <span class="coming-soon-dot" aria-hidden="true"></span>
+        <p>Writing is currently under construction. In the meantime, feel free to <a href="/work/">view my work &rarr;</a></p>
+      </div>
     </section>
   </main>
 </Layout>

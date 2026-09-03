@@ -4,7 +4,7 @@ import HeaderBand from "../components/HeaderBand.astro";
 import PageTitle from "../components/PageTitle.astro";
 import { writingEntries } from "../data/content";
 
-const tags = ["ai", "practice", "systems", "misc", "career", "hiring", "personal"];
+const tags = [...new Set(writingEntries.map((entry) => entry.tag))];
 ---
 
 <Layout
@@ -19,25 +19,34 @@ const tags = ["ai", "practice", "systems", "misc", "career", "hiring", "personal
       <p>Essays, notes, and working observations in one stream. Some are argued out fully; some are just useful enough to keep.</p>
     </header>
 
-    <div class="tag-filter" aria-label="Filter writing by tag">
-      {tags.map((tag) => <button type="button" data-filter-tag={tag}>{tag}</button>)}
-    </div>
+    {tags.length > 0 ? (
+      <div class="tag-filter" aria-label="Filter writing by tag">
+        {tags.map((tag) => <button type="button" data-filter-tag={tag}>{tag}</button>)}
+      </div>
+    ) : null}
 
     <section aria-label="Writing archive">
-      <ol class="note-list archive-list">
-        {writingEntries.map((entry) => (
-          <li data-note-tag={entry.tag}>
-            <a href={entry.href}>
-              <time datetime={entry.date}>{entry.displayDate}</time>
-              <span>
-                <strong>{entry.title}</strong>
-                <em>{entry.summary}</em>
-              </span>
-              <small>{entry.type} / {entry.tag}</small>
-            </a>
-          </li>
-        ))}
-      </ol>
+      {writingEntries.length > 0 ? (
+        <ol class="note-list archive-list">
+          {writingEntries.map((entry) => (
+            <li data-note-tag={entry.tag}>
+              <a href={entry.href}>
+                <time datetime={entry.date}>{entry.displayDate}</time>
+                <span>
+                  <strong>{entry.title}</strong>
+                  <em>{entry.summary}</em>
+                </span>
+                <small>{entry.type} / {entry.tag}</small>
+              </a>
+            </li>
+          ))}
+        </ol>
+      ) : null}
+
+      <div class="writing-coming-soon is-empty-state">
+        <span class="coming-soon-dot" aria-hidden="true"></span>
+        <p>This section is currently under construction. In the meantime, feel free to <a href="/work/">view my work &rarr;</a></p>
+      </div>
     </section>
   </main>
 </Layout>

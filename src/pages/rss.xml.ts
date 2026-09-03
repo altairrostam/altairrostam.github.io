@@ -28,6 +28,8 @@ export function GET() {
     </item>`;
   }).join("\n");
 
+  const buildDate = latest ? pubDate(latest.date) : new Date().toUTCString();
+
   return new Response(`<?xml version="1.0" encoding="UTF-8" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
@@ -35,7 +37,7 @@ export function GET() {
     <link>${site}/</link>
     <description>Writing and notes from Altair R on software, systems, and engineering practice.</description>
     <language>en-us</language>
-    <lastBuildDate>${pubDate(latest.date)}</lastBuildDate>
+    <lastBuildDate>${buildDate}</lastBuildDate>
     <atom:link href="${site}/rss.xml" rel="self" type="application/rss+xml" />
 ${items}
   </channel>
