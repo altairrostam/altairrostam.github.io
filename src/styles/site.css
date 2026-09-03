@@ -226,13 +226,15 @@ button:focus-visible {
   width: 100%;
   background: transparent;
   border-bottom: 1px solid transparent;
-  transition: background-color 180ms ease, border-color 180ms ease, box-shadow 180ms ease;
+  transition: background 250ms ease, border-color 250ms ease, box-shadow 250ms ease, backdrop-filter 250ms ease, -webkit-backdrop-filter 250ms ease;
 }
 
 .site-header.is-scrolled {
-  background: var(--paper);
-  border-bottom-color: rgba(var(--ink-rgb), 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+  background: rgba(var(--paper-rgb), 0.52);
+  backdrop-filter: blur(16px) saturate(180%);
+  -webkit-backdrop-filter: blur(16px) saturate(180%);
+  border-bottom-color: rgba(var(--ink-rgb), 0.08);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
 .site-header.is-scrolled .nav {
@@ -266,6 +268,7 @@ button:focus-visible {
 
 .hero-copy {
   pointer-events: auto;
+  animation: page-fade-in 360ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .brand {
@@ -323,11 +326,16 @@ button:focus-visible {
   cursor: pointer;
   background: transparent;
   opacity: 0.88;
-  transition: opacity 150ms ease, border-color 150ms ease;
+  transition: opacity 150ms ease, border-color 150ms ease, transform 220ms cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .theme-toggle:hover {
   opacity: 1;
+  transform: rotate(20deg) scale(1.08);
+}
+
+.theme-toggle:active {
+  transform: rotate(45deg) scale(0.92);
 }
 
 .theme-toggle svg {
@@ -374,11 +382,23 @@ button:focus-visible {
   line-height: 1.45;
 }
 
+@keyframes page-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .home-main {
   width: min(100%, 720px);
   margin: 0 auto;
   padding-inline: 40px;
   padding-bottom: 56px;
+  animation: page-fade-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .latest-notes {
@@ -465,6 +485,7 @@ button:focus-visible {
   width: min(100%, 720px);
   margin: 0 auto;
   padding: 36px 40px 56px;
+  animation: page-fade-in 320ms cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
 .page-header h1 {
@@ -875,11 +896,13 @@ button:focus-visible {
   border: 1px solid rgba(var(--ink-rgb), 0.13);
   border-radius: 8px;
   background: color-mix(in srgb, var(--paper) 95%, var(--ink));
-  transition: border-color 180ms ease, box-shadow 180ms ease;
+  transition: border-color 220ms ease, box-shadow 220ms ease, transform 220ms ease;
 }
 
 .work-card:hover {
-  border-color: rgba(var(--ink-rgb), 0.24);
+  border-color: rgba(var(--ink-rgb), 0.28);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
 }
 
 .work-card-featured {
@@ -987,9 +1010,17 @@ button:focus-visible {
   white-space: nowrap;
 }
 
+.work-card-cta svg {
+  transition: transform 180ms ease;
+}
+
 .work-card-cta:hover {
   color: var(--rust);
   border-color: var(--rust);
+}
+
+.work-card-cta:hover svg {
+  transform: translate(2px, -2px);
 }
 
 .healthcare-group {
@@ -1460,7 +1491,15 @@ button:focus-visible {
   gap: 16px;
   align-items: baseline;
   padding: 13px 2px;
-  transition: color 180ms ease;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
+.note-list a:hover {
+  transform: translateX(4px);
+}
+
+.note-list a:hover span {
+  color: var(--blue);
 }
 
 .note-list time {
