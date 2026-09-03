@@ -1,177 +1,103 @@
-export const latestWriting = [
-  {
-    title: "AI engineering is software engineering with one extra API call",
-    href: "/notes/ai-engineering-is-software-engineering-with-one-extra-api-call/",
-    date: "2026-08-24",
-    displayDate: "2026.08.24",
-    tag: "ai",
-    type: "note",
-    summary: "The hard parts were never the model."
-  },
-  {
-    title: "Nobody owns the boring half",
-    href: "/writing/",
-    date: "2026-08-11",
-    displayDate: "2026.08.11",
-    tag: "practice",
-    type: "note",
-    summary: "Migrations, cleanup, the ticket nobody wants."
-  },
-  {
-    title: "Standards that are really suggestions",
-    href: "/writing/",
-    date: "2026-07-29",
-    displayDate: "2026.07.29",
-    tag: "systems",
-    type: "note",
-    summary: "Style guides nobody's blocked a PR on."
-  },
-  {
-    title: "How to answer without being useless",
-    href: "/writing/",
-    date: "2026-07-15",
-    displayDate: "2026.07.15",
-    tag: "misc",
-    type: "note",
-    summary: "On giving people something they can act on."
-  }
-] as const;
+export interface WritingEntry {
+  title: string;
+  href: string;
+  date: string;
+  displayDate: string;
+  tag: string;
+  type: string;
+  summary: string;
+}
 
-export const writingEntries = [
-  ...latestWriting,
-  {
-    title: "The on-call rotation is a management tool",
-    href: "/writing/the-on-call-rotation-is-a-management-tool/",
-    date: "2026-07-02",
-    displayDate: "2026.07.02",
-    tag: "practice",
-    type: "essay",
-    summary: "It gets sold as engineering hygiene. It is really organizational telemetry."
-  },
-  {
-    title: "Ran out of milk, made the coffee anyway",
-    href: "/writing/",
-    date: "2026-06-30",
-    displayDate: "2026.06.30",
-    tag: "personal",
-    type: "note",
-    summary: "Small domestic failures and what fixes them."
-  },
-  {
-    title: "The bug was a calendar, not a bug",
-    href: "/writing/",
-    date: "2026-06-09",
-    displayDate: "2026.06.09",
-    tag: "systems",
-    type: "note",
-    summary: "DST again. It's always DST."
-  },
-  {
-    title: "A week off the pager",
-    href: "/writing/",
-    date: "2026-05-22",
-    displayDate: "2026.05.22",
-    tag: "personal",
-    type: "note",
-    summary: "What I noticed about my own attention."
-  },
-  {
-    title: "What \"production-ready\" actually verifies",
-    href: "/writing/",
-    date: "2026-05-18",
-    displayDate: "2026.05.18",
-    tag: "systems",
-    type: "essay",
-    summary: "Not that it works. That someone is willing to be paged for it."
-  },
-  {
-    title: "Grep before you architect",
-    href: "/writing/",
-    date: "2026-05-03",
-    displayDate: "2026.05.03",
-    tag: "practice",
-    type: "note",
-    summary: "Most \"redesigns\" are a search you didn't run."
-  },
-  {
-    title: "What LLMs are actually bad at reviewing",
-    href: "/writing/",
-    date: "2026-04-19",
-    displayDate: "2026.04.19",
-    tag: "ai",
-    type: "note",
-    summary: "Confidence and correctness aren't the same signal."
-  },
-  {
-    title: "Moved a plant, it lived",
-    href: "/writing/",
-    date: "2026-04-02",
-    displayDate: "2026.04.02",
-    tag: "personal",
-    type: "note",
-    summary: "Lower the stakes on purpose sometimes."
-  },
-  {
-    title: "Roaming: a case for generalists on senior teams",
-    href: "/writing/",
-    date: "2026-03-30",
-    displayDate: "2026.03.30",
-    tag: "career",
-    type: "essay",
-    summary: "Specialization is a bet that the problem holds still long enough to be worth it."
-  },
-  {
-    title: "Postmortems nobody reads",
-    href: "/writing/",
-    date: "2026-01-14",
-    displayDate: "2026.01.14",
-    tag: "practice",
-    type: "essay",
-    summary: "The document isn't the deliverable. The changed reflex is."
-  },
-  {
-    title: "The interview problem is a proxy for a worse one",
-    href: "/writing/",
-    date: "2025-11-02",
-    displayDate: "2025.11.02",
-    tag: "hiring",
-    type: "essay",
-    summary: "You're testing for whether they'll tell you it's wrong."
-  }
-] as const;
+export const writingEntries: readonly WritingEntry[] = [];
+export const latestWriting: readonly WritingEntry[] = [];
 
-export const projects = [
-  {
-    name: "runbook",
-    description: "A static-site generator for on-call docs that fails the build if a link is stale.",
-    meta: "go"
-  },
-  {
-    name: "quietpager",
-    description: "Pager-duty analytics that surfaces which services are actually loud, not which alerts fired most.",
-    meta: "typescript"
-  },
-  {
-    name: "backfill",
-    description: "A CLI for replaying production traffic against a staging index without melting it.",
-    meta: "rust"
-  }
-] as const;
+export interface ProjectEntry {
+  name: string;
+  category: string;
+  status?: string;
+  metric?: string;
+  description: readonly string[];
+  stack: readonly string[];
+  link: string;
+  ctaText: string;
+}
 
-export const openSource = [
+export const selectedProjects: readonly ProjectEntry[] = [
   {
-    name: "postgres-lag-exporter",
-    description: "Small metrics exporter for replication lag; still gets the occasional PR.",
-    meta: "maintainer"
-  },
-  {
-    name: "sidekiq",
-    description: "A few merged fixes around dead job retries.",
-    meta: "contributor"
-  },
-  {
-    name: "httpx",
-    description: "Fixed a timeout edge case that took longer to reproduce than to fix.",
-    meta: "contributor"
+    name: "Verniture",
+    category: "E-Commerce Platform",
+    status: "LIVE · IN DEVELOPMENT",
+    description: [
+      "A furniture e-commerce platform for browsing curated collections, purchasing products, and completing local payments through QRIS. Built as a reusable storefront platform rather than a one-off shop.",
+      "I own the technical side end-to-end: application development, backend and database integration, infrastructure, deployment, domain setup, payment-gateway registration and integration, checkout, webhooks, payment reconciliation, and production operations."
+    ],
+    stack: ["Next.js", "Medusa.js", "PostgreSQL", "Midtrans", "Docker"],
+    link: "https://verniture.com/",
+    ctaText: "Visit site"
   }
-] as const;
+];
+
+export const healthcareProjects: readonly ProjectEntry[] = [
+  {
+    name: "iBRAIN2U",
+    category: "Brain MRI Analysis Platform",
+    status: "ARCHIVED · DEMO",
+    description: [
+      "A brain MRI platform for uploading imaging studies, reviewing scans, running AI-assisted classification, and annotating medical images within the application.",
+      "I built the full-stack application and medical-imaging workflow, including the custom MRI viewer and integration between imaging storage, application data, and AI models."
+    ],
+    stack: ["React", "Django", "TensorFlow", "Cornerstone.js", "DICOM", "Orthanc", "PostgreSQL"],
+    link: "https://drive.google.com/file/d/1HeqexBe3F3YoMpvyz-axBe1Xaxj_twzN/view?usp=drive_link",
+    ctaText: "Watch demo"
+  },
+  {
+    name: "SICOSA2U",
+    category: "COVID-19 Medical Imaging Platform",
+    status: "ARCHIVED · DEMO",
+    description: [
+      "A hospital imaging platform for reviewing lung scans and using deep-learning models to assist COVID-19 analysis.",
+      "The system brought image ingestion, processing, model predictions, and clinical review into one workflow instead of requiring researchers to process images separately."
+    ],
+    stack: ["React", "Django", "TensorFlow", "Cornerstone.js", "DICOM", "Orthanc", "PostgreSQL"],
+    link: "https://drive.google.com/file/d/1m6ciVQThLE09sKwlAbD7NWFU_rgJ0q7E/view?usp=drive_link",
+    ctaText: "Watch demo"
+  },
+  {
+    name: "iDERM4U",
+    category: "Dermatology Consultation Platform",
+    status: "LIVE",
+    description: [
+      "A dermatology consultation platform connecting patients, doctors, clinics, and hospitals, with image-based AI assistance integrated into the consultation workflow.",
+      "The platform supported role-specific workflows across the different participants and served 500+ registered users across clinics and a hospital during the project."
+    ],
+    stack: ["React", "Django", "TensorFlow", "OpenCV", "PostgreSQL"],
+    link: "https://iderm4u.com/",
+    ctaText: "Visit site"
+  }
+];
+
+export const openSourceContributions: readonly ProjectEntry[] = [
+  {
+    name: "NIfTI → OHIF / Orthanc",
+    category: "Medical Imaging Developer Tool",
+    description: [
+      "An open-source tool for taking medical images in NIfTI format and making them usable in a standard web-based DICOM viewing workflow.",
+      "It converts NIfTI files to DICOM, stores the resulting studies in Orthanc, and makes them available for viewing and comparison through OHIF Viewer. I built it to bridge research-oriented medical-imaging files with tools commonly used for clinical image viewing."
+    ],
+    stack: ["Python", "FastAPI", "NIfTI", "DICOM", "Orthanc", "OHIF", "Docker"],
+    link: "https://github.com/altairrostam/nifti-ohif-orthanc",
+    ctaText: "View on GitHub"
+  },
+  {
+    name: "GitLab",
+    category: "Open-Source Contributor",
+    metric: "4 merged MRs",
+    description: [
+      "Contributed to the GitLab codebase through four merged community contributions across product code, bug fixes, and documentation, shipped in GitLab releases 17.2–17.4.",
+      "The contributions touched areas including Team Planning, Knowledge, Security Policy, Vue.js, and GitLab Development Kit documentation."
+    ],
+    stack: ["Vue.js", "GitLab Rails", "GDK", "Documentation"],
+    link: "https://gitlab.com/gitlab-org/gitlab/-/merge_requests?author_username=altairrostam&state=merged",
+    ctaText: "View merged contributions"
+  }
+];

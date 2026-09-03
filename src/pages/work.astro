@@ -2,34 +2,112 @@
 import Layout from "../layouts/Layout.astro";
 import HeaderBand from "../components/HeaderBand.astro";
 import PageTitle from "../components/PageTitle.astro";
-import { openSource, projects } from "../data/content";
+import {
+  selectedProjects,
+  healthcareProjects,
+  openSourceContributions
+} from "../data/content";
 ---
 
-<Layout title="Work | Altair R - Software Engineer" description="Work history, projects, and open source notes from Altair R.">
+<Layout
+  title="Work — Altair R. | Software Engineer"
+  description="Selected engineering work by Altair R. across full-stack systems, healthcare AI, medical imaging, e-commerce, and open-source software."
+>
   <HeaderBand active="work" />
 
   <main class="content-main">
     <header class="page-header">
       <PageTitle title="Work" icon="scroll" />
-      <p>Selected tools and open-source work from the parts of systems I keep finding myself near.</p>
+      <p class="work-lead">Things I've built, shipped, and contributed to.</p>
+      <p class="work-sublead">Production software across full-stack engineering, healthcare AI, e-commerce, and open source.</p>
     </header>
 
-    <section class="work-section" aria-labelledby="projects-title">
-      <h2 class="mini-heading" id="projects-title">
+    <section class="work-section" aria-labelledby="selected-work-title">
+      <h2 class="mini-heading" id="selected-work-title">
         <span class="heading-icon icon-anvil" aria-hidden="true"></span>
-        Projects
+        Selected Works
       </h2>
-      <ol class="project-list">
-        {projects.map((project) => (
-          <li>
-            <a class="project-row" href="#">
-              <strong>{project.name}</strong>
-              <span>{project.description}</span>
-              <small>{project.meta}</small>
-            </a>
-          </li>
+
+      <div class="work-cards-list">
+        {selectedProjects.map((project) => (
+          <article class="work-card">
+            <header class="work-card-header">
+              <h3 class="work-card-title">{project.name}</h3>
+              <div class="work-card-meta">
+                <span>{project.category}</span>
+                {project.status && <span class="work-meta-sep">·</span><span>{project.status}</span>}
+              </div>
+            </header>
+
+            <div class="work-card-desc">
+              {project.description.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            <footer class="work-card-footer">
+              <div class="work-card-stack" aria-label="Technologies used">
+                {project.stack.map((tech) => (
+                  <span>{tech}</span>
+                ))}
+              </div>
+              <a
+                class="work-card-cta"
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {project.ctaText} <span aria-hidden="true">&nearr;</span>
+              </a>
+            </footer>
+          </article>
         ))}
-      </ol>
+
+        <div class="healthcare-group">
+          <div class="healthcare-context">
+            <h3 class="healthcare-group-title">Healthcare AI Systems</h3>
+            <p class="healthcare-context-text">
+              Three healthcare platforms developed between 2019–2022 with researchers, doctors, radiologists, and hospital stakeholders, covering brain MRI, lung imaging, and dermatology. Across the systems, the software processed 10,000+ medical-imaging records.
+            </p>
+          </div>
+
+          <div class="healthcare-cards">
+            {healthcareProjects.map((project) => (
+              <article class="work-card">
+                <header class="work-card-header">
+                  <h4 class="work-card-title">{project.name}</h4>
+                  <div class="work-card-meta">
+                    <span>{project.category}</span>
+                    {project.status && <span class="work-meta-sep">·</span><span>{project.status}</span>}
+                  </div>
+                </header>
+
+                <div class="work-card-desc">
+                  {project.description.map((paragraph) => (
+                    <p>{paragraph}</p>
+                  ))}
+                </div>
+
+                <footer class="work-card-footer">
+                  <div class="work-card-stack" aria-label="Technologies used">
+                    {project.stack.map((tech) => (
+                      <span>{tech}</span>
+                    ))}
+                  </div>
+                  <a
+                    class="work-card-cta"
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {project.ctaText} <span aria-hidden="true">&nearr;</span>
+                  </a>
+                </footer>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
     </section>
 
     <section class="work-section" aria-labelledby="open-source-title">
@@ -37,17 +115,42 @@ import { openSource, projects } from "../data/content";
         <span class="heading-icon icon-grimoire" aria-hidden="true"></span>
         Open Source
       </h2>
-      <ol class="project-list">
-        {openSource.map((project) => (
-          <li>
-            <a class="project-row" href="#">
-              <strong>{project.name}</strong>
-              <span>{project.description}</span>
-              <small>{project.meta}</small>
-            </a>
-          </li>
+
+      <div class="work-cards-list">
+        {openSourceContributions.map((contrib) => (
+          <article class="work-card">
+            <header class="work-card-header">
+              <h3 class="work-card-title">{contrib.name}</h3>
+              <div class="work-card-meta">
+                <span>{contrib.category}</span>
+                {contrib.metric && <span class="work-meta-sep">·</span><span>{contrib.metric}</span>}
+              </div>
+            </header>
+
+            <div class="work-card-desc">
+              {contrib.description.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+            </div>
+
+            <footer class="work-card-footer">
+              <div class="work-card-stack" aria-label="Technologies used">
+                {contrib.stack.map((tech) => (
+                  <span>{tech}</span>
+                ))}
+              </div>
+              <a
+                class="work-card-cta"
+                href={contrib.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {contrib.ctaText} <span aria-hidden="true">&nearr;</span>
+              </a>
+            </footer>
+          </article>
         ))}
-      </ol>
+      </div>
     </section>
   </main>
 </Layout>
